@@ -461,7 +461,32 @@ Each prompt is one change. This is key — if you ask for five things at once an
 
 This cycle is the core of vibe coding:
 
-### Describe → Generate → Review → Refine → Repeat
+<div class="flex items-center justify-center gap-3 mt-6">
+  <div class="bg-blue-100 dark:bg-blue-900 px-4 py-3 rounded-lg text-center shadow-sm">
+    <ph-chat-text class="text-2xl mb-1 mx-auto text-blue-600" /><br/>
+    <span class="text-sm font-bold">Describe</span>
+  </div>
+  <ph-arrow-right class="text-xl text-gray-400" />
+  <div class="bg-violet-100 dark:bg-violet-900 px-4 py-3 rounded-lg text-center shadow-sm">
+    <ph-magic-wand class="text-2xl mb-1 mx-auto text-violet-600" /><br/>
+    <span class="text-sm font-bold">Generate</span>
+  </div>
+  <ph-arrow-right class="text-xl text-gray-400" />
+  <div class="bg-amber-100 dark:bg-amber-900 px-4 py-3 rounded-lg text-center shadow-sm">
+    <ph-magnifying-glass class="text-2xl mb-1 mx-auto text-amber-600" /><br/>
+    <span class="text-sm font-bold">Review</span>
+  </div>
+  <ph-arrow-right class="text-xl text-gray-400" />
+  <div class="bg-green-100 dark:bg-green-900 px-4 py-3 rounded-lg text-center shadow-sm">
+    <ph-wrench class="text-2xl mb-1 mx-auto text-green-600" /><br/>
+    <span class="text-sm font-bold">Refine</span>
+  </div>
+  <ph-arrow-right class="text-xl text-gray-400" />
+  <div class="bg-gray-100 dark:bg-gray-800 px-4 py-3 rounded-lg text-center shadow-sm">
+    <ph-arrows-clockwise class="text-2xl mb-1 mx-auto text-gray-500" /><br/>
+    <span class="text-sm font-bold">Repeat</span>
+  </div>
+</div>
 
 </v-clicks>
 
@@ -510,19 +535,36 @@ This is the "wow" moment. One prompt takes us from a static drawing to a playabl
 
 <v-clicks>
 
-We went from **a drawing** → **an animation** → **a playable game**
+<div class="flex items-center justify-center gap-4 mt-8 text-lg">
+  <div class="bg-blue-100 dark:bg-blue-900 px-6 py-4 rounded-xl text-center font-bold shadow">
+    <ph-image class="text-3xl mb-1 mx-auto" /><br/>Drawing
+  </div>
+  <ph-arrow-right class="text-3xl text-gray-400" />
+  <div class="bg-amber-100 dark:bg-amber-900 px-6 py-4 rounded-xl text-center font-bold shadow">
+    <ph-film-strip class="text-3xl mb-1 mx-auto" /><br/>Animation
+  </div>
+  <ph-arrow-right class="text-3xl text-gray-400" />
+  <div class="bg-green-100 dark:bg-green-900 px-6 py-4 rounded-xl text-center font-bold shadow">
+    <ph-game-controller class="text-3xl mb-1 mx-auto" /><br/>Game
+  </div>
+</div>
 
-Lines of code we wrote by hand: **zero**
+<div class="grid grid-cols-2 gap-8 mt-10">
+<div class="text-center">
+  <div class="text-5xl font-bold text-gray-400">0</div>
+  <div class="text-sm opacity-70 mt-1">lines written by hand</div>
+</div>
+<div class="text-center">
+  <div class="text-5xl font-bold">~6</div>
+  <div class="text-sm opacity-70 mt-1">prompts written</div>
+</div>
+</div>
 
-Prompts we wrote: **~6**
+<div class="mt-8 text-center text-xl">
 
-The AI did the coding.
-**We did the thinking.**
+The AI did the coding. **We did the thinking.**
 
-- We decided what to build
-- We decided what to change
-- We decided when something was wrong
-- We decided when it was done
+</div>
 
 </v-clicks>
 
@@ -545,30 +587,59 @@ layout: center
 
 Pick one, combine a few, or invent your own:
 
-<div class="grid grid-cols-2 gap-6 mt-4">
-<div>
+<div class="grid grid-cols-4 gap-4 mt-6">
 
-### Modify the game
-- Change the duck to a different animal
-- Add power-ups (speed boost, shield)
-- Add a high-score tracker
-- Make obstacles move faster over time
-- Add a second player
-
-</div>
-<div>
-
-### Start fresh
-- Bouncing ball that changes color on click
-- Fireworks that launch on mouse click
-- Pong game with two paddles
-- Drawing app (mouse draws, keyboard changes color)
-- Falling snowflakes / rain simulation
-
-</div>
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-paw-print class="text-3xl mb-2 mx-auto text-amber-600" />
+  <div class="text-sm font-bold">New Animal</div>
+  <div class="text-xs opacity-60 mt-1">Swap the duck</div>
 </div>
 
-<div class="mt-6 text-sm opacity-70">
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-lightning class="text-3xl mb-2 mx-auto text-yellow-500" />
+  <div class="text-sm font-bold">Power-ups</div>
+  <div class="text-xs opacity-60 mt-1">Speed, shield, magnets</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-trophy class="text-3xl mb-2 mx-auto text-green-600" />
+  <div class="text-sm font-bold">High Score</div>
+  <div class="text-xs opacity-60 mt-1">Track your best run</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-users class="text-3xl mb-2 mx-auto text-blue-600" />
+  <div class="text-sm font-bold">Two Players</div>
+  <div class="text-xs opacity-60 mt-1">Split keyboard controls</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-paint-brush class="text-3xl mb-2 mx-auto text-pink-500" />
+  <div class="text-sm font-bold">Drawing App</div>
+  <div class="text-xs opacity-60 mt-1">Mouse draws, keys change color</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-fire class="text-3xl mb-2 mx-auto text-red-500" />
+  <div class="text-sm font-bold">Fireworks</div>
+  <div class="text-xs opacity-60 mt-1">Click to launch</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-tennis-ball class="text-3xl mb-2 mx-auto text-lime-500" />
+  <div class="text-sm font-bold">Pong</div>
+  <div class="text-xs opacity-60 mt-1">Classic two-paddle game</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-snowflake class="text-3xl mb-2 mx-auto text-cyan-400" />
+  <div class="text-sm font-bold">Weather Sim</div>
+  <div class="text-xs opacity-60 mt-1">Snow, rain, or stars</div>
+</div>
+
+</div>
+
+<div class="mt-4 text-sm opacity-70 text-center">
 
 **Stuck?** Try: *"I want to [describe what you see in your head]. Write p5.js code for it."*
 
@@ -741,11 +812,20 @@ Run this live. The output is simple and satisfying — warmest day, coolest nigh
 
 Three scripts. All vibe-coded. Very different risk profiles.
 
-| Script | What it did | Where it reached |
-|--------|------------|-----------------|
-| Access check | Contacted two servers | Out to the internet |
-| Fetch weather | Downloaded live data | Out to an API, saved locally |
-| Analyze forecast | Read a local file, did math | **Never left your machine** |
+<div class="space-y-3 mt-4">
+  <div class="flex items-center gap-4 bg-red-50 dark:bg-red-900/40 border-l-4 border-red-500 rounded-r-lg px-5 py-3">
+    <ph-globe class="text-2xl text-red-500 flex-shrink-0" />
+    <div><span class="font-bold">Access check</span> — Contacted two servers <span class="opacity-60">· Out to the internet</span></div>
+  </div>
+  <div class="flex items-center gap-4 bg-amber-50 dark:bg-amber-900/40 border-l-4 border-amber-500 rounded-r-lg px-5 py-3">
+    <ph-cloud-arrow-down class="text-2xl text-amber-500 flex-shrink-0" />
+    <div><span class="font-bold">Fetch weather</span> — Downloaded live data <span class="opacity-60">· Out to an API, saved locally</span></div>
+  </div>
+  <div class="flex items-center gap-4 bg-green-50 dark:bg-green-900/40 border-l-4 border-green-500 rounded-r-lg px-5 py-3">
+    <ph-house class="text-2xl text-green-500 flex-shrink-0" />
+    <div><span class="font-bold">Analyze forecast</span> — Read a local file, did math <span class="opacity-60">· Never left your machine</span></div>
+  </div>
+</div>
 
 ### The AI treated all three the same.
 
