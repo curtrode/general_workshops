@@ -27,6 +27,7 @@ jobs:
         run: |
           mkdir -p _site/vibes
           cp -r vibes/dist/* _site/vibes/
+          cp vibes/dist/404.html _site/404.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
