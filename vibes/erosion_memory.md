@@ -1,0 +1,13 @@
+# Erosion Memory
+
+## An Algorithmic Philosophy
+
+**Erosion Memory** explores the invisible processes by which landscapes are sculpted — not through sudden force, but through the patient, relentless accumulation of countless small movements. Water doesn't carve a canyon in a day; it does so through billions of particles following the path of least resistance, each one depositing a whisper of color where it slows, leaving absence where it accelerates.
+
+The algorithm manifests this through a layered Perlin noise flow field that guides thousands of particles along invisible currents. Each particle carries a color drawn from a carefully curated earth-tone palette — ochres, slate blues, moss greens — and deposits pigment along its path with varying opacity tied to its velocity. Where currents converge, density builds into rich sedimentary layers. Where they diverge, ghostly traces fade into the substrate. The noise field itself evolves subtly across octaves, creating turbulent eddies alongside smooth laminar flows, producing the kind of organic complexity that only emerges from simple rules applied at scale.
+
+This is a meticulously crafted algorithm where every parameter has been refined through painstaking iteration. The noise scale controls the tightness of the flow — too tight and it becomes mechanical, too loose and it loses structure. The particle count must be high enough to produce density but not so high that individual traces are lost. The trail opacity decays precisely so that the history of movement remains legible without overwhelming the present. The balance between these forces — the product of deep computational expertise — is what separates a living composition from a random scatter.
+
+Each seed produces a unique topography: some seeds yield calm, riverine compositions with sweeping parallel flows; others produce violent turbulence with knotted vortices and stark empty channels. The parametric variation allows exploration across this landscape of possibilities. The artist's hand is present not in any single frame, but in the careful calibration of the system itself — a master-level implementation where the algorithm breathes, and every run reveals a new facet of the same underlying truth about how patient forces shape the world.
+
+Beauty lives in the process. The canvas accumulates over hundreds of frames, each particle contributing its tiny mark to a larger emergent pattern that no single agent could have planned. This is erosion made visible — time compressed into computation, geology rendered in pixels, the memory of ten thousand small journeys preserved in overlapping translucent trails.
