@@ -930,6 +930,6 @@ class: text-center
 
 Today's starter pen, prompts, and slides are available at:
 
-[ repository link ]
+[curtrode.github.io/general_workshops/vibes](https://curtrode.github.io/general_workshops/vibes/)
 
 </div>
