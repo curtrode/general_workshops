@@ -106,26 +106,20 @@ Quick overview so everyone knows the arc. First third is concepts, middle third 
 
 # What Is Vibe Coding?
 
-<img src="/karpathy_headshot.jpg" class="absolute top-8 right-12 w-36 rounded-full shadow-lg opacity-90" />
-
 <v-clicks>
 
-The term comes from **Andrej Karpathy** (OpenAI co-founder):
+Vibe coding is a (poorly named) way to get AI to write code for you — websites, data analysis, apps, automations — by describing what you want in plain language. No programming knowledge required.
 
-> "You just see stuff, say stuff, run stuff, and copy-paste stuff, and it mostly works."
+You make requests; AI writes the code. **Your job is to guide the results.**
 
-<div class="text-xs opacity-60">Source: Andrej Karpathy's 2025 post introducing "vibe coding".</div>
+Today we'll focus on **web development**, but the pattern works everywhere.
 
-**Translation:** You describe what you want in plain language. AI writes the code. You guide the process.
-
-This is **not** about becoming a programmer.
-
-It's about using AI as a **creative tool** — like picking up a paintbrush without going to art school.
+This is **not** about becoming a programmer — it's about using AI as a **creative tool**, like picking up a paintbrush without going to art school.
 
 </v-clicks>
 
 <!--
-Karpathy popularized this phrase in 2025. It went viral because it captured something people were already doing — describing things to AI and getting working code back. The key insight: you don't have to understand every line of code to build something real. But you DO have to stay engaged with what's happening.
+The term "vibe coding" was popularized by Andrej Karpathy in 2025. It went viral because it captured something people were already doing — describing things to AI and getting working code back. We're using our own definition here because the concept matters more than the origin story. The key insight: you don't have to understand every line of code to build something real. But you DO have to stay engaged with what's happening.
 -->
 
 ---
