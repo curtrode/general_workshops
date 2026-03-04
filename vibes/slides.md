@@ -108,13 +108,13 @@ Quick overview so everyone knows the arc. First third is concepts, middle third 
 
 <v-clicks>
 
-Vibe coding is a (poorly named) way to get AI to write code for you — websites, data analysis, apps, automations — by describing what you want in plain language. No programming knowledge required.
+Vibe coding is a (poorly named) way to get AI to write code for you — to develop websites, data analysis, apps, automations — by describing what you want in plain language. No programming knowledge required.
 
 You make requests; AI writes the code. **Your job is to guide the results.**
 
 Today we'll focus on **web development**, but the pattern works everywhere.
 
-This is **not** about becoming a programmer — it's about using AI as a **creative tool**, like picking up a paintbrush without going to art school.
+This is **not** about becoming a programmer — it's about having a seat at the table where digital things get made. Going from someone who uses the web to someone who can **shape it**, with AI as your collaborator.
 
 </v-clicks>
 
@@ -734,50 +734,50 @@ layout: center
 
 # Challenge Ideas
 
-Pick one, combine a few, or invent your own:
+You don't have to keep building a portfolio — try something you'd actually use:
 
 <div class="grid grid-cols-4 gap-4 mt-6">
 
 <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-users-three class="text-3xl mb-2 mx-auto text-blue-600" />
+  <div class="text-sm font-bold">Club or Org</div>
+  <div class="text-xs opacity-60 mt-1">Page for your student group</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-camera class="text-3xl mb-2 mx-auto text-pink-500" />
+  <div class="text-sm font-bold">Photo Gallery</div>
+  <div class="text-xs opacity-60 mt-1">Showcase your photography or art</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-storefront class="text-3xl mb-2 mx-auto text-green-600" />
+  <div class="text-sm font-bold">Side Hustle</div>
+  <div class="text-xs opacity-60 mt-1">Landing page for a business</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-calendar-blank class="text-3xl mb-2 mx-auto text-amber-500" />
+  <div class="text-sm font-bold">Event Page</div>
+  <div class="text-xs opacity-60 mt-1">Promote an upcoming event</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
   <ph-palette class="text-3xl mb-2 mx-auto text-violet-500" />
   <div class="text-sm font-bold">Custom Theme</div>
-  <div class="text-xs opacity-60 mt-1">New colors & fonts</div>
+  <div class="text-xs opacity-60 mt-1">Restyle your portfolio</div>
 </div>
 
 <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-  <ph-briefcase class="text-3xl mb-2 mx-auto text-blue-600" />
-  <div class="text-sm font-bold">Projects</div>
-  <div class="text-xs opacity-60 mt-1">Add a portfolio gallery</div>
-</div>
-
-<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-  <ph-device-mobile class="text-3xl mb-2 mx-auto text-green-600" />
-  <div class="text-sm font-bold">Mobile-First</div>
-  <div class="text-xs opacity-60 mt-1">Optimize for phones</div>
-</div>
-
-<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-  <ph-sparkle class="text-3xl mb-2 mx-auto text-amber-500" />
+  <ph-sparkle class="text-3xl mb-2 mx-auto text-cyan-500" />
   <div class="text-sm font-bold">Animations</div>
   <div class="text-xs opacity-60 mt-1">Scroll effects & transitions</div>
 </div>
 
 <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-  <ph-article class="text-3xl mb-2 mx-auto text-pink-500" />
-  <div class="text-sm font-bold">Blog Section</div>
-  <div class="text-xs opacity-60 mt-1">Posts or articles page</div>
-</div>
-
-<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-  <ph-quotes class="text-3xl mb-2 mx-auto text-cyan-500" />
-  <div class="text-sm font-bold">Testimonials</div>
-  <div class="text-xs opacity-60 mt-1">Quotes carousel</div>
-</div>
-
-<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-  <ph-file-text class="text-3xl mb-2 mx-auto text-red-500" />
-  <div class="text-sm font-bold">Resume Page</div>
-  <div class="text-xs opacity-60 mt-1">Separate CV / resume</div>
+  <ph-heart class="text-3xl mb-2 mx-auto text-red-500" />
+  <div class="text-sm font-bold">Fan Page</div>
+  <div class="text-xs opacity-60 mt-1">A site about something you love</div>
 </div>
 
 <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
@@ -790,12 +790,12 @@ Pick one, combine a few, or invent your own:
 
 <div class="mt-4 text-sm opacity-70 text-center">
 
-**Stuck?** Try: *"I want my portfolio to have [describe what you see in your head]."*
+**Stuck?** Try: *"Build me a [type of site] with [describe what you see in your head]."*
 
 </div>
 
 <!--
-Let them go. Walk the room. Help people who are stuck by asking "what do you want your site to look like?" and helping them turn that into a prompt. Don't write prompts for them — coach them to describe what they see. Some people will go deep on their portfolio. Others will start a completely different site. Both are fine. Remind anyone who's stuck to include "Give me the updated HTML, CSS, and JS as three separate code blocks" in their prompt so Claude gives them properly separated code to paste.
+This is where the seat at the table becomes real — they're not building what you told them to build, they're building what they want to exist. Walk the room. Help people who are stuck by asking "what do you want your site to look like?" and helping them turn that into a prompt. Don't write prompts for them — coach them to describe what they see. Remind anyone who's stuck to include "Give me the updated HTML, CSS, and JS as three separate code blocks" in their prompt.
 -->
 
 ---
@@ -876,7 +876,8 @@ Brief but important. We're not going deep on security today, but this needs to b
 4. **Your guidelines** keep you in the driver's seat
 5. **Breaking things** is debugging, not failing
 6. The **design decisions** are still yours — AI is the tool, not the designer
-7. **Review before you publish** — AI gets you there fast, but the last mile is yours
+7. You now have **a seat at the table** — you can shape the web, not just use it
+8. **Review before you publish** — AI gets you there fast, but the last mile is yours
 
 </v-clicks>
 
