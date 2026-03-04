@@ -10,18 +10,62 @@ mdc: true
 ---
 
 <script setup>
-import { onMounted } from 'vue'
+import { onBeforeUnmount, onMounted } from 'vue'
+
+const flashCopied = (el) => {
+  const orig = el.style.outline
+  el.style.outline = '2px solid #22c55e'
+  setTimeout(() => { el.style.outline = orig }, 600)
+}
+
+const copyText = async (text) => {
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text)
+      return true
+    }
+  } catch {
+    // Fall through to legacy fallback.
+  }
+
+  const ta = document.createElement('textarea')
+  ta.value = text
+  ta.setAttribute('readonly', '')
+  ta.style.position = 'fixed'
+  ta.style.opacity = '0'
+  ta.style.pointerEvents = 'none'
+  document.body.appendChild(ta)
+  ta.select()
+
+  let copied = false
+  try {
+    copied = document.execCommand('copy')
+  } catch {
+    copied = false
+  }
+  document.body.removeChild(ta)
+  return copied
+}
+
+const handleSelectAllClick = async (e) => {
+  const target = e.target
+  if (!(target instanceof Element)) return
+
+  const el = target.closest('.select-all')
+  if (!(el instanceof HTMLElement)) return
+
+  const text = el.innerText.replace(/^Prompt:\s*/i, '').trim()
+  if (!text) return
+
+  if (await copyText(text)) flashCopied(el)
+}
+
 onMounted(() => {
-  document.addEventListener('click', (e) => {
-    const el = e.target.closest('.select-all')
-    if (!el) return
-    const text = el.innerText.replace(/^Prompt:\s*/i, '').trim()
-    navigator.clipboard.writeText(text).then(() => {
-      const orig = el.style.outline
-      el.style.outline = '2px solid #22c55e'
-      setTimeout(() => { el.style.outline = orig }, 600)
-    })
-  })
+  document.addEventListener('click', handleSelectAllClick)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleSelectAllClick)
 })
 </script>
 
@@ -70,6 +114,8 @@ The term comes from **Andrej Karpathy** (OpenAI co-founder):
 
 > "You just see stuff, say stuff, run stuff, and copy-paste stuff, and it mostly works."
 
+<div class="text-xs opacity-60">Source: Andrej Karpathy's 2025 post introducing "vibe coding".</div>
+
 **Translation:** You describe what you want in plain language. AI writes the code. You guide the process.
 
 This is **not** about becoming a programmer.
@@ -79,7 +125,7 @@ It's about using AI as a **creative tool** — like picking up a paintbrush with
 </v-clicks>
 
 <!--
-Karpathy coined this in early 2025. It went viral because it captured something people were already doing — describing things to AI and getting working code back. The key insight: you don't have to understand every line of code to build something real. But you DO have to stay engaged with what's happening.
+Karpathy popularized this phrase in 2025. It went viral because it captured something people were already doing — describing things to AI and getting working code back. The key insight: you don't have to understand every line of code to build something real. But you DO have to stay engaged with what's happening.
 -->
 
 ---
@@ -342,14 +388,14 @@ This maps to the CLAUDE.md concept from professional AI-assisted development. De
 Open **claude.ai** in your browser
 
 ### Step 2 — Create a free account
-Click **"Sign up"** — you can use Google, email, or Apple
+Click **"Sign up"** — email/Google are common options; phone verification may be required in supported regions
 
 ### Step 3 — Start a conversation
 You should see a chat interface. Type anything to test it.
 
 <div class="mt-4 text-sm opacity-70">
 
-Claude will **generate the code** for your website. You can also use ChatGPT or Gemini — the prompts work the same way.
+Claude will **generate the code** for your website. You can also use ChatGPT or Gemini — the prompt pattern is similar, but outputs and limits vary by model.
 
 </div>
 
@@ -579,7 +625,7 @@ Send these **one at a time** to Claude. Paste each updated set of blocks into Co
 
 <div class="bg-green-50 dark:bg-green-900 p-2 rounded select-all cursor-pointer">
 
-**Prompt 4:** *"Add a footer with links to GitHub, LinkedIn, and Twitter using icons. Include a copyright line."*
+**Prompt 4:** *"Add a footer with links to GitHub, LinkedIn, and X (Twitter) using icons. Include a copyright line."*
 
 </div>
 
@@ -676,7 +722,7 @@ These prompts add the polish that makes a site feel professional.
 
 <div class="mt-6 text-sm opacity-70">
 
-These are all **JavaScript behaviors** — interactivity you described in English, and Claude implemented for you.
+These are **interactivity and polish behaviors** — some are JavaScript, some are CSS, and Claude implemented them from your plain-English prompts.
 
 </div>
 
@@ -706,7 +752,7 @@ This is the "wow" moment. One prompt gives us smooth scrolling. Another gives us
 
 <div class="grid grid-cols-2 gap-8 mt-10">
 <div class="text-center">
-  <div class="text-5xl font-bold text-gray-400">0</div>
+  <div class="text-5xl font-bold text-gray-400">~0</div>
   <div class="text-sm opacity-70 mt-1">lines written by hand</div>
 </div>
 <div class="text-center">
