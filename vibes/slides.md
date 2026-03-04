@@ -94,8 +94,8 @@ layout: center
 | 5 min | Good prompts vs. bad prompts |
 | 5 min | Write your personal AI guidelines |
 | 10 min | Set up Claude + CodePen · First prompt |
-| 20 min | Codealong: hero → sections → interactivity |
-| 25 min | Free experimentation — make it yours |
+| 25 min | Codealong: hero → sections → interactivity |
+| 20 min | Free experimentation — make it yours |
 | 10 min | Wrap-up and discussion |
 
 <!--
@@ -126,40 +126,6 @@ It's about using AI as a **creative tool** — like picking up a paintbrush with
 
 <!--
 Karpathy popularized this phrase in 2025. It went viral because it captured something people were already doing — describing things to AI and getting working code back. The key insight: you don't have to understand every line of code to build something real. But you DO have to stay engaged with what's happening.
--->
-
----
-
-# Who Is This For?
-
-<div class="grid grid-cols-2 gap-5 mt-4">
-<v-clicks>
-
-<div class="bg-blue-50 dark:bg-blue-900 rounded-xl p-5 flex items-start gap-3 shadow-sm">
-  <ph-prohibit class="text-2xl text-red-400 mt-1 flex-shrink-0" />
-  <div><span class="font-bold">No HTML, CSS, or JavaScript needed</span><br/><span class="text-sm opacity-70">Seriously — not a single line</span></div>
-</div>
-
-<div class="bg-green-50 dark:bg-green-900 rounded-xl p-5 flex items-start gap-3 shadow-sm">
-  <ph-lightbulb class="text-2xl text-amber-500 mt-1 flex-shrink-0" />
-  <div><span class="font-bold">Curiosity + willingness to experiment</span><br/><span class="text-sm opacity-70">That's the only prerequisite</span></div>
-</div>
-
-<div class="bg-amber-50 dark:bg-amber-900 rounded-xl p-5 flex items-start gap-3 shadow-sm">
-  <ph-wrench class="text-2xl text-amber-600 mt-1 flex-shrink-0" />
-  <div><span class="font-bold">Things will break — that's the process</span><br/><span class="text-sm opacity-70">Debugging is a feature, not a bug</span></div>
-</div>
-
-<div class="bg-violet-50 dark:bg-violet-900 rounded-xl p-5 flex items-start gap-3 shadow-sm">
-  <ph-rocket-launch class="text-2xl text-violet-500 mt-1 flex-shrink-0" />
-  <div><span class="font-bold">Goal: build a website that didn't exist an hour ago</span><br/><span class="text-sm opacity-70">From zero to portfolio in 90 minutes</span></div>
-</div>
-
-</v-clicks>
-</div>
-
-<!--
-I want to be explicit about this because some people hear "web development workshop" and assume it's not for them. If you can describe what you want a website to look like, you can do this.
 -->
 
 ---
@@ -603,36 +569,24 @@ class: text-center
 
 Send these **one at a time** to Claude. Paste each updated set of blocks into CodePen.
 
-<div class="space-y-2 mt-2 text-sm">
+<div class="space-y-4 mt-4">
 
-<div class="bg-green-50 dark:bg-green-900 p-2 rounded select-all cursor-pointer">
+<div class="bg-green-50 dark:bg-green-900 p-4 rounded select-all cursor-pointer">
 
-**Prompt 1:** *"Add an About Me section below the hero with a placeholder photo on the left and a short bio paragraph on the right. Give me the updated HTML, CSS, and JS as three separate code blocks."*
-
-</div>
-
-<div class="bg-green-50 dark:bg-green-900 p-2 rounded select-all cursor-pointer">
-
-**Prompt 2:** *"Add a Skills section that displays 6 skills as cards in a grid. Use simple icons or emoji for each skill. Pick skills that a college student might have."*
+**Prompt 1:** *"Add an About Me section below the hero with a placeholder photo on the left and a short bio paragraph on the right. Below that, add a Skills section that displays 6 skills as cards in a grid — use simple icons or emoji for each skill. Pick skills that a college student might have. Give me the updated HTML, CSS, and JS as three separate code blocks."*
 
 </div>
 
-<div class="bg-green-50 dark:bg-green-900 p-2 rounded select-all cursor-pointer">
+<div class="bg-green-50 dark:bg-green-900 p-4 rounded select-all cursor-pointer">
 
-**Prompt 3:** *"Add a Contact section at the bottom with a simple form — name, email, and message fields with a Send button."*
-
-</div>
-
-<div class="bg-green-50 dark:bg-green-900 p-2 rounded select-all cursor-pointer">
-
-**Prompt 4:** *"Add a footer with links to GitHub, LinkedIn, and X (Twitter) using icons. Include a copyright line."*
+**Prompt 2:** *"Add a Contact section at the bottom with a simple form — name, email, and message fields with a Send button. Below that, add a footer with links to GitHub, LinkedIn, and X (Twitter) using icons and a copyright line."*
 
 </div>
 
 </div>
 
 <!--
-Each prompt is one section. This is key — if you ask for five things at once and something breaks, you don't know which change caused it. One at a time. After each response, replace the contents of all three CodePen panels with the updated code. If something breaks, tell Claude what went wrong: "The about section is overlapping the hero" or "the skills cards aren't aligned." The first prompt asks for three separate code blocks — after that, Claude will keep giving separated blocks in the same conversation. Give them time here. Walk the room. Some people will be ahead, some behind. That's fine.
+Two prompts instead of four — each one adds two related sections. After each response, replace the contents of all three CodePen panels with the updated code. If something breaks, tell Claude what went wrong: "The about section is overlapping the hero" or "the skills cards aren't aligned." The first prompt asks for three separate code blocks — after that, Claude will keep giving separated blocks in the same conversation. Give them time here. Walk the room. Some people will be ahead, some behind. That's fine.
 -->
 
 ---
@@ -778,7 +732,7 @@ layout: center
 ---
 
 # Free Experimentation
-## 25 Minutes — Make It Yours
+## 20 Minutes — Make It Yours
 
 <div class="text-sm opacity-60">Keep prompting Claude — paste into CodePen to see your results. Ask me if you get stuck.</div>
 
