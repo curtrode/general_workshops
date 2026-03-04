@@ -86,14 +86,31 @@ Karpathy coined this in early 2025. It went viral because it captured something 
 
 # Who Is This For?
 
+<div class="grid grid-cols-2 gap-5 mt-4">
 <v-clicks>
 
-- You **don't** need to know HTML, CSS, or JavaScript
-- You **do** need curiosity and a willingness to experiment
-- If something breaks, that's part of the process — not a failure
-- Today's goal: **build a personal website that didn't exist an hour ago**
+<div class="bg-blue-50 dark:bg-blue-900 rounded-xl p-5 flex items-start gap-3 shadow-sm">
+  <ph-prohibit class="text-2xl text-red-400 mt-1 flex-shrink-0" />
+  <div><span class="font-bold">No HTML, CSS, or JavaScript needed</span><br/><span class="text-sm opacity-70">Seriously — not a single line</span></div>
+</div>
+
+<div class="bg-green-50 dark:bg-green-900 rounded-xl p-5 flex items-start gap-3 shadow-sm">
+  <ph-lightbulb class="text-2xl text-amber-500 mt-1 flex-shrink-0" />
+  <div><span class="font-bold">Curiosity + willingness to experiment</span><br/><span class="text-sm opacity-70">That's the only prerequisite</span></div>
+</div>
+
+<div class="bg-amber-50 dark:bg-amber-900 rounded-xl p-5 flex items-start gap-3 shadow-sm">
+  <ph-wrench class="text-2xl text-amber-600 mt-1 flex-shrink-0" />
+  <div><span class="font-bold">Things will break — that's the process</span><br/><span class="text-sm opacity-70">Debugging is a feature, not a bug</span></div>
+</div>
+
+<div class="bg-violet-50 dark:bg-violet-900 rounded-xl p-5 flex items-start gap-3 shadow-sm">
+  <ph-rocket-launch class="text-2xl text-violet-500 mt-1 flex-shrink-0" />
+  <div><span class="font-bold">Goal: build a website that didn't exist an hour ago</span><br/><span class="text-sm opacity-70">From zero to portfolio in 90 minutes</span></div>
+</div>
 
 </v-clicks>
+</div>
 
 <!--
 I want to be explicit about this because some people hear "web development workshop" and assume it's not for them. If you can describe what you want a website to look like, you can do this.
@@ -135,25 +152,43 @@ Instead of something abstract, we're using the exact thing you'll build today. E
 
 # The Four Levels
 
+<div class="space-y-3 mt-2">
 <v-clicks>
 
-### 1. Fundamentals First
-You write HTML/CSS yourself. You ask AI: *"How do I center a div?"*
-The AI is a **tutor**.
+<div class="bg-blue-50 dark:bg-blue-900 rounded-lg p-4 flex items-start gap-4 shadow-sm">
+  <div class="bg-blue-200 dark:bg-blue-700 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold text-lg">1</div>
+  <div>
+    <div class="font-bold">Fundamentals First</div>
+    <div class="text-sm opacity-80">You write HTML/CSS yourself. You ask AI: <em>"How do I center a div?"</em> — The AI is a <strong>tutor</strong>.</div>
+  </div>
+</div>
 
-### 2. Collaborative
-You sketch the layout: *"I need a hero section with centered text, navy background, white text."*
-The AI **implements your design**.
+<div class="bg-violet-50 dark:bg-violet-900 rounded-lg p-4 flex items-start gap-4 shadow-sm">
+  <div class="bg-violet-200 dark:bg-violet-700 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold text-lg">2</div>
+  <div>
+    <div class="font-bold">Collaborative</div>
+    <div class="text-sm opacity-80">You sketch the layout: <em>"Hero section, navy background, white text."</em> — The AI <strong>implements your design</strong>.</div>
+  </div>
+</div>
 
-### 3. Vibe Coding ← **We're here today**
-You describe the outcome: *"Build me a personal portfolio website."*
-The AI **generates everything**. You guide and refine.
+<div class="bg-green-50 dark:bg-green-900 rounded-lg p-4 flex items-start gap-4 shadow-sm border-2 border-green-400">
+  <div class="bg-green-200 dark:bg-green-700 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold text-lg">3</div>
+  <div>
+    <div class="font-bold">Vibe Coding ← We're here today</div>
+    <div class="text-sm opacity-80">You describe the outcome: <em>"Build me a personal portfolio website."</em> — The AI <strong>generates everything</strong>. You guide and refine.</div>
+  </div>
+</div>
 
-### 4. Full Automation
-You deploy AI-generated code without reviewing it.
-You've **left the driver's seat**. 🚫
+<div class="bg-red-50 dark:bg-red-900 rounded-lg p-4 flex items-start gap-4 shadow-sm opacity-70">
+  <div class="bg-red-200 dark:bg-red-700 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 font-bold text-lg">4</div>
+  <div>
+    <div class="font-bold">Full Automation 🚫</div>
+    <div class="text-sm opacity-80">You deploy AI-generated code without reviewing it. You've <strong>left the driver's seat</strong>.</div>
+  </div>
+</div>
 
 </v-clicks>
+</div>
 
 <!--
 Level 3 is where we'll spend the workshop. It's the sweet spot for non-coders: you're describing outcomes, the AI is doing the implementation, but you're actively involved in reviewing and refining. Level 4 is where things go wrong — you lose the ability to understand, explain, or steer what's being built. Deploying a website you've never reviewed? That's Level 4.
@@ -186,26 +221,41 @@ This is important because people tend to think the "most AI" option is the best 
 # Good Prompts vs. Bad Prompts
 
 <div class="grid grid-cols-2 gap-8 mt-4">
-<div>
 
-### ❌ Bad Prompt
+<div class="bg-red-50 dark:bg-red-900/50 rounded-xl p-6 shadow-sm">
+<div class="flex items-center gap-2 mb-3">
+  <ph-x-circle class="text-2xl text-red-500" />
+  <span class="font-bold text-lg">Bad Prompt</span>
+</div>
+
 *"Make me a website"*
+
+<div class="mt-3 text-sm opacity-80">
 
 - Vague
 - No constraints
 - AI has to guess everything
 
 </div>
-<div>
+</div>
 
-### ✅ Good Prompt
+<div class="bg-green-50 dark:bg-green-900/50 rounded-xl p-6 shadow-sm">
+<div class="flex items-center gap-2 mb-3">
+  <ph-check-circle class="text-2xl text-green-500" />
+  <span class="font-bold text-lg">Good Prompt</span>
+</div>
+
 *"Build a personal portfolio page with a navy blue hero section, my name in large white text, a subtitle that says 'Computer Science Student at TCU,' and a button that says 'See My Work.' Use clean, modern styling."*
+
+<div class="mt-3 text-sm opacity-80">
 
 - Specific outcome
 - Color and layout details
 - Clear content
 
 </div>
+</div>
+
 </div>
 
 <!--
@@ -216,21 +266,35 @@ The difference is night and day. The bad prompt could produce literally anything
 
 # What Makes a Good Prompt?
 
+<div class="grid grid-cols-2 gap-5 mt-4">
 <v-clicks>
 
-1. **Describe the outcome**, not the process
-   - "A hero section with my name" not "create a div with flexbox centering"
+<div class="bg-blue-50 dark:bg-blue-900 rounded-xl p-5 shadow-sm">
+  <ph-target class="text-2xl mb-2 text-blue-600" />
+  <div class="font-bold mb-1">Describe the outcome</div>
+  <div class="text-sm opacity-80">"A hero section with my name" — not "create a div with flexbox centering"</div>
+</div>
 
-2. **Be specific about what matters**
-   - Colors, layout, content, tone
+<div class="bg-amber-50 dark:bg-amber-900 rounded-xl p-5 shadow-sm">
+  <ph-magnifying-glass class="text-2xl mb-2 text-amber-600" />
+  <div class="font-bold mb-1">Be specific about what matters</div>
+  <div class="text-sm opacity-80">Colors, layout, content, tone</div>
+</div>
 
-3. **Name your constraints**
-   - "Clean and modern" · "Mobile-friendly" · "Dark color scheme"
+<div class="bg-violet-50 dark:bg-violet-900 rounded-xl p-5 shadow-sm">
+  <ph-funnel class="text-2xl mb-2 text-violet-600" />
+  <div class="font-bold mb-1">Name your constraints</div>
+  <div class="text-sm opacity-80">"Clean and modern" · "Mobile-friendly" · "Dark color scheme"</div>
+</div>
 
-4. **Iterate with small follow-ups**
-   - Don't rewrite the whole prompt — ask for one change at a time
+<div class="bg-green-50 dark:bg-green-900 rounded-xl p-5 shadow-sm">
+  <ph-arrows-clockwise class="text-2xl mb-2 text-green-600" />
+  <div class="font-bold mb-1">Iterate with small follow-ups</div>
+  <div class="text-sm opacity-80">Don't rewrite the whole prompt — ask for one change at a time</div>
+</div>
 
 </v-clicks>
+</div>
 
 <!--
 This is the core skill of vibe coding. You're not learning syntax — you're learning to communicate clearly with an AI. These same principles work whether you're generating code, writing emails, or creating images.
@@ -293,6 +357,50 @@ Claude will **generate the HTML, CSS, and JavaScript** for your website as separ
 
 <!--
 Give them a couple minutes to get signed up. Some will already have accounts. Common issues: institutional email blocks, needing to verify email, phone verification. If someone can't get Claude working, ChatGPT or Gemini are fine alternatives.
+-->
+
+---
+
+# Try It: Your First Prompt
+
+Everyone has Claude open? Let's send our first prompt together.
+
+<div class="bg-blue-50 dark:bg-blue-900 p-6 rounded-lg mt-4 text-lg select-all cursor-pointer" title="Click to copy">
+
+**Prompt:**
+
+Build a personal portfolio website with my name as a large heading, a subtitle with my major, and a "See My Work" button. Use a navy and white color scheme. Give me everything in a single HTML file I can save and open in my browser.
+
+</div>
+
+<v-clicks>
+
+<div class="flex items-center justify-center gap-3 mt-6">
+  <div class="bg-blue-100 dark:bg-blue-900 px-4 py-3 rounded-lg text-center shadow-sm">
+    <ph-chat-text class="text-2xl mb-1 mx-auto text-blue-600" /><br/>
+    <span class="text-sm font-bold">Prompt Claude</span>
+  </div>
+  <ph-arrow-right class="text-xl text-gray-400" />
+  <div class="bg-violet-100 dark:bg-violet-900 px-4 py-3 rounded-lg text-center shadow-sm">
+    <ph-code class="text-2xl mb-1 mx-auto text-violet-600" /><br/>
+    <span class="text-sm font-bold">Copy the HTML</span>
+  </div>
+  <ph-arrow-right class="text-xl text-gray-400" />
+  <div class="bg-amber-100 dark:bg-amber-900 px-4 py-3 rounded-lg text-center shadow-sm">
+    <ph-floppy-disk class="text-2xl mb-1 mx-auto text-amber-600" /><br/>
+    <span class="text-sm font-bold">Save as .html</span>
+  </div>
+  <ph-arrow-right class="text-xl text-gray-400" />
+  <div class="bg-green-100 dark:bg-green-900 px-4 py-3 rounded-lg text-center shadow-sm">
+    <ph-browser class="text-2xl mb-1 mx-auto text-green-600" /><br/>
+    <span class="text-sm font-bold">Open in browser</span>
+  </div>
+</div>
+
+</v-clicks>
+
+<!--
+Have everyone send this prompt. While they wait for Claude to respond, explain: this asks for a single HTML file — everything in one place. They'll copy the code, paste it into a text editor, save it as something.html, and double-click to open. Walk through this live on screen. It works! You now have a website. But notice: everything is in one big file, and the only way to change anything is to go back to Claude.
 -->
 
 ---
