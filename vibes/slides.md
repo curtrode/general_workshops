@@ -444,6 +444,24 @@ Click **"Pen"** in the top-left to create a blank pen
 ### Step 3 — You're ready
 You'll see three panels: **HTML**, **CSS**, and **JS**. We'll paste AI-generated code into each matching panel.
 
+<div class="grid grid-cols-3 gap-4 mt-2 text-sm">
+<div class="bg-blue-50 dark:bg-blue-900 p-2 rounded text-center">
+
+**HTML** = Structure<br>The framing of a house
+
+</div>
+<div class="bg-purple-50 dark:bg-purple-900 p-2 rounded text-center">
+
+**CSS** = Style<br>Paint, furniture, decor
+
+</div>
+<div class="bg-amber-50 dark:bg-amber-900 p-2 rounded text-center">
+
+**JS** = Behavior<br>Electricity & plumbing
+
+</div>
+</div>
+
 <div class="mt-4 text-sm opacity-70">
 
 **Level 3 + Level 2:** Vibe code the big stuff with Claude. Tweak colors, text, or spacing directly in the code yourself. Move between levels as needed.
@@ -539,27 +557,27 @@ class: text-center
 
 Send these **one at a time** to Claude. Paste each updated set of blocks into CodePen.
 
-<div class="space-y-4 mt-4">
+<div class="space-y-2 mt-2 text-sm">
 
-<div class="bg-green-50 dark:bg-green-900 p-4 rounded select-all cursor-pointer">
+<div class="bg-green-50 dark:bg-green-900 p-2 rounded select-all cursor-pointer">
 
 **Prompt 1:** *"Add an About Me section below the hero with a placeholder photo on the left and a short bio paragraph on the right. Give me the updated HTML, CSS, and JS as three separate code blocks."*
 
 </div>
 
-<div class="bg-green-50 dark:bg-green-900 p-4 rounded select-all cursor-pointer">
+<div class="bg-green-50 dark:bg-green-900 p-2 rounded select-all cursor-pointer">
 
 **Prompt 2:** *"Add a Skills section that displays 6 skills as cards in a grid. Use simple icons or emoji for each skill. Pick skills that a college student might have."*
 
 </div>
 
-<div class="bg-green-50 dark:bg-green-900 p-4 rounded select-all cursor-pointer">
+<div class="bg-green-50 dark:bg-green-900 p-2 rounded select-all cursor-pointer">
 
 **Prompt 3:** *"Add a Contact section at the bottom with a simple form — name, email, and message fields with a Send button."*
 
 </div>
 
-<div class="bg-green-50 dark:bg-green-900 p-4 rounded select-all cursor-pointer">
+<div class="bg-green-50 dark:bg-green-900 p-2 rounded select-all cursor-pointer">
 
 **Prompt 4:** *"Add a footer with links to GitHub, LinkedIn, and Twitter using icons. Include a copyright line."*
 
