@@ -492,7 +492,7 @@ class: text-center
 <div class="text-sm opacity-60 mt-4">Open Claude and CodePen side by side — now let's build it the right way</div>
 
 <!--
-Transition to the hands-on portion. I'll drive Claude on screen and paste into CodePen. Everyone follows along.
+Transition to the hands-on portion. I'll drive Claude on screen and paste into CodePen. Everyone follows along. If Claude is slow or rate-limited, have them switch to free ChatGPT — the prompts work the same way. If someone falls behind, remind them to scroll up in their chat and grab the last working code.
 -->
 
 ---
