@@ -646,31 +646,25 @@ class: text-center
 
 These prompts add the polish that makes a site feel professional.
 
-<div class="space-y-4 mt-4">
+<div class="space-y-2 mt-2">
 
-<div class="bg-purple-50 dark:bg-purple-900 p-4 rounded select-all cursor-pointer">
+<div class="bg-purple-50 dark:bg-purple-900 p-3 rounded text-sm select-all cursor-pointer">
 
 **Prompt 1:** *"Add a navigation bar at the top that links to each section. When I click a link, it should smooth-scroll to that section."*
 
 </div>
 
-<div class="bg-purple-50 dark:bg-purple-900 p-4 rounded select-all cursor-pointer">
+<div class="bg-purple-50 dark:bg-purple-900 p-3 rounded text-sm select-all cursor-pointer">
 
 **Prompt 2:** *"Add a dark mode toggle button in the top-right corner of the nav bar. It should switch all colors to a dark theme and back."*
 
 </div>
 
-<div class="bg-purple-50 dark:bg-purple-900 p-4 rounded select-all cursor-pointer">
+<div class="bg-purple-50 dark:bg-purple-900 p-3 rounded text-sm select-all cursor-pointer">
 
 **Prompt 3:** *"Add subtle hover animations — skill cards should lift up slightly when hovered, and the CTA button should glow."*
 
 </div>
-
-</div>
-
-<div class="mt-6 text-sm opacity-70">
-
-These are **interactivity and polish behaviors** — some are JavaScript, some are CSS, and Claude implemented them from your plain-English prompts.
 
 </div>
 
