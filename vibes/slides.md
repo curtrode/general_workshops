@@ -49,8 +49,8 @@ layout: center
 | 15 min | What is vibe coding + the AI coding spectrum |
 | 5 min | Good prompts vs. bad prompts |
 | 5 min | Write your personal AI guidelines |
-| 5 min | Set up Claude + CodePen |
-| 25 min | Codealong: hero → sections → interactivity |
+| 10 min | Set up Claude + CodePen · First prompt |
+| 20 min | Codealong: hero → sections → interactivity |
 | 25 min | Free experimentation — make it yours |
 | 10 min | Wrap-up and discussion |
 
@@ -349,7 +349,7 @@ You should see a chat interface. Type anything to test it.
 
 <div class="mt-4 text-sm opacity-70">
 
-Claude will **generate the HTML, CSS, and JavaScript** for your website as separate code blocks. You can also use ChatGPT or Gemini.
+Claude will **generate the code** for your website. You can also use ChatGPT or Gemini — the prompts work the same way.
 
 </div>
 
@@ -465,7 +465,7 @@ class: text-center
 
 ### Step 1: Your Portfolio — The Hero Section
 
-<div class="text-sm opacity-60 mt-4">Open Claude and CodePen side by side — we're building your first website</div>
+<div class="text-sm opacity-60 mt-4">Open Claude and CodePen side by side — now let's build it the right way</div>
 
 <!--
 Transition to the hands-on portion. I'll drive Claude on screen and paste into CodePen. Everyone follows along.
