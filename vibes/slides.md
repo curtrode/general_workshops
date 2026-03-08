@@ -93,7 +93,7 @@ layout: center
 | 15 min | What is vibe coding + the AI coding spectrum |
 | 5 min | Good prompts vs. bad prompts |
 | 5 min | Write your personal AI guidelines |
-| 10 min | Set up Claude + CodePen · First prompt |
+| 10 min | Set up Claude + Phoenix Code · First prompt |
 | 25 min | Codealong: hero → sections → interactivity |
 | 20 min | Free experimentation — make it yours |
 | 10 min | Wrap-up and discussion |
@@ -430,25 +430,23 @@ What if we added a little **Level 2** — where you can make small changes yours
 </v-clicks>
 
 <!--
-This is a quick framing slide — don't linger. The callback to the spectrum is the key moment: they already know Level 3 means "AI generates everything, you guide." Now we're showing the practical limitation of that. The next slide introduces CodePen as the way to blend Level 2 and Level 3 — vibe code the big stuff, hand-edit the small stuff. That's the spectrum in action: choosing the right level for the task.
+This is a quick framing slide — don't linger. The callback to the spectrum is the key moment: they already know Level 3 means "AI generates everything, you guide." Now we're showing the practical limitation of that. The next slide introduces Phoenix Code as the way to blend Level 2 and Level 3 — vibe code the big stuff, hand-edit the small stuff. That's the spectrum in action: choosing the right level for the task.
 -->
 
 ---
 
-# Setup: CodePen
-
-<img src="/codepen-logo.svg" class="absolute top-8 right-12 w-36 opacity-80" />
+# Setup: Phoenix Code
 
 <v-clicks>
 
-### Step 1 — Create a free account
-Go to **codepen.io** → Sign Up (free)
+### Step 1 — Open Phoenix Code
+Go to **phcode.dev** — click **"Start Coding"** (no account needed!)
 
-### Step 2 — Create a new Pen
-Click **"Pen"** in the top-left to create a blank pen
+### Step 2 — Create your project files
+In the file tree on the left, create three files: **index.html**, **style.css**, and **script.js**
 
 ### Step 3 — You're ready
-You'll see three panels: **HTML**, **CSS**, and **JS**. We'll paste AI-generated code into each matching panel.
+Paste AI-generated code into each matching file. Click **Live Preview** (lightning bolt icon) to see your site update in real time.
 
 <div class="grid grid-cols-3 gap-4 mt-2 text-sm">
 <div class="bg-blue-50 dark:bg-blue-900 p-2 rounded text-center">
@@ -477,7 +475,7 @@ You'll see three panels: **HTML**, **CSS**, and **JS**. We'll paste AI-generated
 </v-clicks>
 
 <!--
-Walk the room and make sure everyone has a blank pen open. This is the key framing: CodePen isn't just a viewer — it's an editor. They can vibe code with Claude for the heavy lifting, but also reach in and change a color value or fix a typo themselves. That's the bridge between Level 3 and Level 2 on the spectrum. Common issues: people pasting CSS into the HTML panel, or putting everything in one panel. Make sure they understand: HTML goes in HTML, CSS goes in CSS, JS goes in JS. If someone's confused, just help them match the blocks.
+Walk the room and make sure everyone has Phoenix Code open with Live Preview running. This is the key framing: Phoenix Code isn't just a viewer — it's a real code editor with instant live preview. They can vibe code with Claude for the heavy lifting, but also reach in and change a color value or fix a typo themselves. That's the bridge between Level 3 and Level 2 on the spectrum. No account needed — just go to phcode.dev and click Start Coding. Common issues: people pasting CSS into the HTML file, or putting everything in one file. Make sure they understand: HTML goes in index.html, CSS goes in style.css, JS goes in script.js. If someone's confused, just help them match the blocks.
 -->
 
 ---
@@ -489,10 +487,10 @@ class: text-center
 
 ### Step 1: Your Portfolio — The Hero Section
 
-<div class="text-sm opacity-60 mt-4">Open Claude and CodePen side by side — now let's build it the right way</div>
+<div class="text-sm opacity-60 mt-4">Open Claude and Phoenix Code side by side — now let's build it the right way</div>
 
 <!--
-Transition to the hands-on portion. I'll drive Claude on screen and paste into CodePen. Everyone follows along. If Claude is slow or rate-limited, have them switch to free ChatGPT — the prompts work the same way. If someone falls behind, remind them to scroll up in their chat and grab the last working code.
+Transition to the hands-on portion. I'll drive Claude on screen and paste into Phoenix Code. Everyone follows along. If Claude is slow or rate-limited, have them switch to free ChatGPT — the prompts work the same way. If someone falls behind, remind them to scroll up in their chat and grab the last working code.
 -->
 
 ---
@@ -505,7 +503,7 @@ I'm typing this into Claude on screen. Follow along in your own Claude tab.
 
 **Prompt:**
 
-Build a personal portfolio website with a hero section that has a large heading with my name, a subtitle with my role or major, and a call-to-action button that says "See My Work." Use a clean, modern design with a navy blue and white color scheme. Make it look professional. Give me the HTML, CSS, and JavaScript as three separate code blocks so I can paste each into CodePen.
+Build a personal portfolio website with a hero section that has a large heading with my name, a subtitle with my role or major, and a call-to-action button that says "See My Work." Use a clean, modern design with a navy blue and white color scheme. Make it look professional. Give me the HTML, CSS, and JavaScript as three separate code blocks so I can paste each into its own file.
 
 </div>
 
@@ -513,12 +511,12 @@ Build a personal portfolio website with a hero section that has a large heading 
 
 Replace "my name" and "my role or major" with your actual info — or use a fake name for fun.
 
-After Claude responds → paste the HTML block into the **HTML panel**, the CSS into the **CSS panel**, and the JS into the **JS panel**.
+After Claude responds → paste the HTML block into **index.html**, the CSS into **style.css**, and the JS into **script.js** in Phoenix Code.
 
 </div>
 
 <!--
-Read the prompt aloud. Emphasize: we didn't write any code. We described what we want to see. The key phrase is "three separate code blocks so I can paste each into CodePen" — that ensures Claude gives them properly separated code. Now let's see what Claude gives us. Paste each block into the matching panel, see the result. It won't be perfect — and that's the point. Ask the room: "What do you think? What would you change?"
+Read the prompt aloud. Emphasize: we didn't write any code. We described what we want to see. The key phrase is "three separate code blocks so I can paste each into its own file" — that ensures Claude gives them properly separated code. Now let's see what Claude gives us. Paste each block into the matching file in Phoenix Code, see the result in Live Preview. It won't be perfect — and that's the point. Ask the room: "What do you think? What would you change?" Make sure the HTML file includes link and script tags referencing style.css and script.js — if Claude doesn't include them, add them.
 -->
 
 ---
@@ -537,7 +535,7 @@ Read the prompt aloud. Emphasize: we didn't write any code. We described what we
 
 1. We **described** what we wanted
 2. AI **generated** the code
-3. We **pasted** into CodePen and **reviewed** the result
+3. We **pasted** into Phoenix Code and **reviewed** the result
 4. Now we **refine** →
 
 </v-clicks>
@@ -561,7 +559,7 @@ class: text-center
 
 # Step 2: Build Out the Page
 
-Send these **one at a time** to Claude. Paste each updated set of blocks into CodePen.
+Send these **one at a time** to Claude. Paste each updated set of blocks into Phoenix Code.
 
 <div class="space-y-4 mt-4">
 
@@ -580,7 +578,7 @@ Send these **one at a time** to Claude. Paste each updated set of blocks into Co
 </div>
 
 <!--
-Two prompts instead of four — each one adds two related sections. After each response, replace the contents of all three CodePen panels with the updated code. If something breaks, tell Claude what went wrong: "The about section is overlapping the hero" or "the skills cards aren't aligned." The first prompt asks for three separate code blocks — after that, Claude will keep giving separated blocks in the same conversation. Give them time here. Walk the room. Some people will be ahead, some behind. That's fine.
+Two prompts instead of four — each one adds two related sections. After each response, replace the contents of all three files in Phoenix Code with the updated code. If something breaks, tell Claude what went wrong: "The about section is overlapping the hero" or "the skills cards aren't aligned." The first prompt asks for three separate code blocks — after that, Claude will keep giving separated blocks in the same conversation. Give them time here. Walk the room. Some people will be ahead, some behind. That's fine.
 -->
 
 ---
@@ -669,7 +667,7 @@ These prompts add the polish that makes a site feel professional.
 </div>
 
 <!--
-This is the "wow" moment. One prompt gives us smooth scrolling. Another gives us dark mode. These are real front-end development features that would take a beginner hours to implement manually. Don't rush this — let the room react. If something doesn't work, debug live: "The dark mode toggle isn't switching the background color." Model the process. Remind them to replace all three panels each time.
+This is the "wow" moment. One prompt gives us smooth scrolling. Another gives us dark mode. These are real front-end development features that would take a beginner hours to implement manually. Don't rush this — let the room react. If something doesn't work, debug live: "The dark mode toggle isn't switching the background color." Model the process. Remind them to replace all three files each time.
 -->
 
 ---
@@ -722,7 +720,7 @@ layout: center
 # Free Experimentation
 ## 20 Minutes — Make It Yours
 
-<div class="text-sm opacity-60">Keep prompting Claude — paste into CodePen to see your results. Ask me if you get stuck.</div>
+<div class="text-sm opacity-60">Keep prompting Claude — paste into Phoenix Code to see your results. Ask me if you get stuck.</div>
 
 ---
 
@@ -789,7 +787,7 @@ You don't have to keep building a portfolio — try something you'd actually use
 </div>
 
 <!--
-This is where the seat at the table becomes real — they're not building what you told them to build, they're building what they want to exist. Walk the room. Help people who are stuck by asking "what do you want your site to look like?" and helping them turn that into a prompt. Don't write prompts for them — coach them to describe what they see. Remind anyone who's stuck to include "Give me the updated HTML, CSS, and JS as three separate code blocks" in their prompt.
+This is where the seat at the table becomes real — they're not building what you told them to build, they're building what they want to exist. Walk the room. Help people who are stuck by asking "what do you want your site to look like?" and helping them turn that into a prompt. Don't write prompts for them — coach them to describe what they see. Remind anyone who's stuck to include "Give me the updated HTML, CSS, and JS as three separate code blocks" in their prompt. In Phoenix Code, they paste each block into the matching file and Live Preview updates automatically.
 -->
 
 ---
@@ -888,8 +886,8 @@ Quick recap. Seven takeaways that capture the whole workshop. The first six are 
 
 ### Tools from today
 - **Claude.ai** / **ChatGPT** / **Gemini** — AI assistants
-- **CodePen** — codepen.io (free, instant preview)
-- **Export your work:** In CodePen, click **Export → Export .zip** to download your HTML, CSS, and JS files
+- **Phoenix Code** — phcode.dev (free, no account needed, live preview)
+- **Export your work:** In Phoenix Code, your files are already saved — download them directly from the file tree
 
 ### What to try next
 - Build a site for a club, event, or side project
@@ -915,7 +913,7 @@ Keep them. Revisit them. Update them as you learn.
 </div>
 
 <!--
-Leave these resources up while people pack up. bolt.new, v0.dev, and Lovable are AI-powered web development tools worth trying at home — they generate full projects but have usage limits on free tiers. freeCodeCamp is excellent if anyone wants to learn the fundamentals behind what the AI is generating. And CodePen is a great sandbox for experimenting.
+Leave these resources up while people pack up. bolt.new, v0.dev, and Lovable are AI-powered web development tools worth trying at home — they generate full projects but have usage limits on free tiers. freeCodeCamp is excellent if anyone wants to learn the fundamentals behind what the AI is generating. And Phoenix Code is a great sandbox for experimenting — no account needed, just go to phcode.dev.
 -->
 
 ---

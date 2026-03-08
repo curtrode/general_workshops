@@ -2,7 +2,7 @@
 
 Exact prompts for the three codealong steps. Each prompt is designed to be typed
 into any AI chat tool (Claude.ai, ChatGPT, Gemini, etc.) and the output pasted
-into the JS panel of the CodePen starter pen.
+into the JS panel of the Phoenix Code starter pen.
 
 ---
 
@@ -20,7 +20,7 @@ into the JS panel of the CodePen starter pen.
 
 - Read the prompt aloud before typing it
 - After AI responds, copy the entire code block
-- In CodePen: select all in the JS panel → paste → the preview pane should update instantly
+- In Phoenix Code: select all in the JS panel → paste → the preview pane should update instantly
 - Ask the room: "What do you see? Does it look like a duck?"
 - It probably won't be perfect — beak might be in the wrong spot, proportions may be off
 - That's the point: **first draft, not final product**
@@ -39,7 +39,7 @@ Don't worry if it looks different from what you expected. Every AI tool will pro
 
 ## Step 2: Iterative Refinements (~10 min)
 
-Send these **one at a time**. After each, copy the full updated code and paste it into CodePen (replace all).
+Send these **one at a time**. After each, copy the full updated code and paste it into Phoenix Code (replace all).
 
 ### Prompt 2a — Spinning Wheels
 
@@ -122,7 +122,7 @@ These are useful during free experimentation when attendees get stuck:
 
 ### "It's not working at all"
 
-> My CodePen is showing a blank/white screen. Here's the code in my JS panel:
+> My Phoenix Code is showing a blank/white screen. Here's the code in my JS panel:
 > [paste]. The pen has p5.js loaded as an external library. What's wrong?
 
 ### "Part of it disappeared"

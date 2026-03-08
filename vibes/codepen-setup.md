@@ -1,34 +1,45 @@
-# CodePen + p5.js Setup Guide
+# Phoenix Code + p5.js Setup Guide
 
-How to handle p5.js in CodePen for the workshop.
+How to handle p5.js in Phoenix Code for the workshop.
 
 ---
 
-## Recommended Approach: Starter Pen
+## Recommended Approach: Starter Project
 
-**Create a starter pen in advance. Attendees fork it. Zero configuration needed.**
+**Create a starter project with the p5.js script tag already included. Attendees open Phoenix Code and paste into the same file structure. Zero configuration needed.**
 
-This eliminates the biggest friction point: attendees don't need to know about CDNs, external libraries, or CodePen settings. They fork, paste, and go.
+This eliminates the biggest friction point: attendees don't need to know about CDNs or external libraries. They open Phoenix Code, create the files, and go.
 
-### How to Create the Starter Pen
+### How to Set Up
 
-1. Go to codepen.io and sign in with your account
-2. Create a new Pen
-3. Click the **Settings** gear icon (top of the editor)
-4. Go to the **JS** tab in Settings
-5. In **"Add External Scripts/Pens"**, paste:
-   ```
-   https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js
-   ```
-6. Click **Save & Close**
-7. In the **JS panel**, paste the starter code (see below)
-8. **Save** the pen
-9. Copy the pen URL — this is your share link
+1. Go to **phcode.dev** and click **"Start Coding"** (no account needed)
+2. Create a new file called **index.html**
+3. Paste the starter HTML (see below) — it includes the p5.js CDN script tag
+4. Create a new file called **sketch.js**
+5. Paste the starter JS code (see below)
+6. Click the **Live Preview** button (lightning bolt icon) to see the canvas
 
-### Starter Code (JS Panel)
+### Starter HTML (index.html)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Coding Workshop</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+</head>
+<body>
+  <script src="sketch.js"></script>
+</body>
+</html>
+```
+
+### Starter Code (sketch.js)
 
 ```javascript
-// Vibe Coding Workshop — Starter Pen
+// Vibe Coding Workshop — Starter Project
 // p5.js is already loaded. Paste AI-generated code here.
 
 function setup() {
@@ -49,64 +60,37 @@ function draw() {
   textAlign(CENTER, CENTER);
   text("Replace this code with AI-generated p5.js code", 300, 180);
   textSize(14);
-  text("Paste into this JS panel — the preview updates automatically", 300, 210);
+  text("Paste into sketch.js — Live Preview updates automatically", 300, 210);
 }
 ```
 
 ### What to Tell Attendees
 
-> "Open this link: [your starter pen URL]. Click **Fork** in the bottom-right corner to make your own copy. You'll paste code into the **JS panel** — that's the bottom-left panel. The preview on the right updates automatically."
+> "Go to phcode.dev and click Start Coding — no account needed. Create two files: index.html and sketch.js. Paste the starter code I'll share into each file. Click the lightning bolt icon for Live Preview. You'll paste AI-generated code into **sketch.js** — the preview updates automatically."
 
-### HTML and CSS Panels
+### index.html
 
-Leave them **empty**. All p5.js code goes in the JS panel. CodePen's default HTML includes a `<body>` tag, which is where p5.js will automatically insert its canvas. No HTML or CSS needed.
-
----
-
-## Alternative: Walk Through Setup Live
-
-If you prefer not to use a starter pen (or want attendees to understand the configuration), here's the walkthrough:
-
-### During "Setup: CodePen Accounts" (5 min)
-
-1. Everyone creates a free CodePen account at codepen.io
-2. Create a new Pen (click "Pen" in the left sidebar)
-3. Click **Settings** (gear icon, top of editor)
-4. Click the **JS** tab
-5. Under "Add External Scripts/Pens" — type `p5` and select **p5.js** from the autocomplete, or paste the CDN URL:
-   ```
-   https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js
-   ```
-6. Click **Save & Close**
-7. Now they're ready — code goes in the JS panel
-
-### Risks with This Approach
-
-- Takes longer (adds 2–3 min to setup)
-- Some attendees will miss a step and get a blank screen
-- You'll spend time debugging CodePen settings instead of coding
-- Worth it only if "understanding the setup" is a learning objective
+The HTML file just loads p5.js from CDN and includes sketch.js. Attendees should **not** modify index.html — all p5.js code goes in sketch.js.
 
 ---
 
-## Which Panel Does Code Go In?
+## Which File Does Code Go In?
 
 This is the most common confusion. Be explicit and repeat it:
 
-| Panel | What Goes There | For This Workshop |
-|-------|----------------|-------------------|
-| **HTML** | HTML markup | Leave empty |
-| **CSS** | Stylesheets | Leave empty |
-| **JS** | JavaScript code | **All p5.js code goes here** |
+| File | What Goes There | For This Workshop |
+|------|----------------|-------------------|
+| **index.html** | HTML + script tags | Don't modify — already set up |
+| **sketch.js** | JavaScript / p5.js code | **All p5.js code goes here** |
 
-p5.js creates a `<canvas>` element automatically — no HTML needed. The canvas appears in the **preview pane** (right side or bottom, depending on layout).
+p5.js creates a `<canvas>` element automatically — no extra HTML needed. The canvas appears in the **Live Preview** panel.
 
-### CodePen Layout Tip
+### Phoenix Code Layout Tip
 
-Recommend attendees switch to a layout where the preview is large:
+The Live Preview opens in a panel on the right side of the editor. If the preview is too small:
 
-- Click **Change View** (top-left of editor)
-- Select the layout with **editor on the left, preview on the right** — this gives the most space to see the canvas
+- Drag the divider between the editor and preview to give more space to the preview
+- Or click the "Open in browser" icon to see the preview in a full browser tab
 
 ---
 
@@ -114,25 +98,26 @@ Recommend attendees switch to a layout where the preview is large:
 
 ### Blank preview / nothing shows up
 
-- Is p5.js loaded? Check Settings > JS > External Scripts — should show the p5 CDN URL
-- Is code in the **JS** panel (not HTML or CSS)?
+- Is p5.js loaded? Check that index.html has the `<script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>` tag
+- Is code in **sketch.js** (not index.html)?
+- Is index.html referencing sketch.js with `<script src="sketch.js"></script>`?
 - Open browser console (F12 or Cmd+Option+J) — look for red errors
-- Most common error: `p5 is not defined` → p5.js not loaded as external script
+- Most common error: `p5 is not defined` → the CDN script tag is missing from index.html
 
 ### "p5 is not defined" error
 
-The external library wasn't added. Go to Settings > JS and add it.
+The CDN script tag is missing or misspelled in index.html. Make sure the `<script>` tag loading p5.js appears **before** the `<script src="sketch.js">` tag.
 
 ### Canvas shows but it's tiny or cut off
 
 - Check that `createCanvas(600, 400)` is in the `setup()` function
-- Make sure the preview pane is large enough (change layout if needed)
+- Make sure the Live Preview panel is large enough (drag the divider or open in browser)
 
-### Code works locally but not in CodePen
+### Live Preview not updating
 
-- CodePen runs in an iframe — some browser APIs behave differently
-- `createCanvas()` must be inside `setup()`, not at the top level
-- `loadImage()` and `loadSound()` require CORS-compatible URLs
+- Make sure you've saved the file (Ctrl+S / Cmd+S)
+- Phoenix Code's Live Preview should auto-refresh on save
+- Try closing and reopening Live Preview (click the lightning bolt icon again)
 
 ---
 
@@ -154,14 +139,14 @@ Use the pinned version for the workshop.
 
 ---
 
-## Decision: Starter Pen (Recommended)
+## Why Phoenix Code?
 
-**The starter pen approach is the clear winner for a general audience:**
+**Phoenix Code is a great choice for a general audience:**
 
-1. Eliminates configuration friction (no CDN knowledge needed)
-2. Ensures everyone starts from the same baseline
-3. Saves 2–3 minutes of setup time
-4. Reduces "my screen is blank" support requests
-5. Fork operation is one click — intuitive even for non-technical users
+1. **No account needed** — go to phcode.dev and start coding immediately
+2. Eliminates signup friction (no email, no password, no verification)
+3. Real code editor experience with syntax highlighting and Live Preview
+4. Files are organized naturally (index.html, sketch.js) — mirrors real web development
+5. Free and open source
 
-**Action item:** Create the starter pen from your CodePen account, paste the starter code above, save it, and include the fork URL in the slides before the workshop.
+**Action item:** Test the setup flow on phcode.dev before the workshop. Create index.html and sketch.js with the starter code above, verify Live Preview works, and prepare to walk attendees through the same steps.
