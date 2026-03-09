@@ -93,7 +93,8 @@ layout: center
 | 15 min | What is vibe coding + the AI coding spectrum |
 | 5 min | Good prompts vs. bad prompts |
 | 5 min | Write your personal AI guidelines |
-| 10 min | Set up Claude + Phoenix Code · First prompt |
+| 5 min | Set up Claude · First prompt (single HTML file) |
+| 5 min | Set up Phoenix Code · GitHub Import |
 | 25 min | Codealong: hero → sections → interactivity |
 | 20 min | Free experimentation — make it yours |
 | 10 min | Wrap-up and discussion |
@@ -476,11 +477,11 @@ This is a quick framing slide — don't linger. The callback to the spectrum is 
 ### Step 1 — Open Phoenix Code
 Go to **phcode.dev** — click **"Start Coding"** (no account needed!)
 
-### Step 2 — Create your project files
-In the file tree on the left, create three files: **index.html**, **style.css**, and **script.js**
+### Step 2 — Import the starter project
+Click **GitHub Import** → paste: **curtrode/vibe-coding-starter**
 
 ### Step 3 — You're ready
-Paste AI-generated code into each matching file. Click **Live Preview** (lightning bolt icon) to see your site update in real time.
+Your files are already set up: **index.html**, **style.css**, **script.js**. Click **Live Preview** (lightning bolt icon) to see your site update in real time.
 
 <div class="grid grid-cols-3 gap-4 mt-2 text-sm">
 <div class="bg-blue-50 dark:bg-blue-900 p-2 rounded text-center">
@@ -509,7 +510,7 @@ Paste AI-generated code into each matching file. Click **Live Preview** (lightni
 </v-clicks>
 
 <!--
-Walk the room and make sure everyone has Phoenix Code open with Live Preview running. This is the key framing: Phoenix Code isn't just a viewer — it's a real code editor with instant live preview. They can vibe code with Claude for the heavy lifting, but also reach in and change a color value or fix a typo themselves. That's the bridge between Level 3 and Level 2 on the spectrum. No account needed — just go to phcode.dev and click Start Coding. Common issues: people pasting CSS into the HTML file, or putting everything in one file. Make sure they understand: HTML goes in index.html, CSS goes in style.css, JS goes in script.js. If someone's confused, just help them match the blocks.
+Walk the room and make sure everyone has Phoenix Code open with Live Preview running. The GitHub Import should give them all three files automatically — no manual file creation needed. If someone has trouble with GitHub Import, they can also download the ZIP from github.com/curtrode/vibe-coding-starter and use Open Folder (Chrome/Edge/Opera only). This is the key framing: Phoenix Code isn't just a viewer — it's a real code editor with instant live preview. They can vibe code with Claude for the heavy lifting, but also reach in and change a color value or fix a typo themselves. That's the bridge between Level 3 and Level 2 on the spectrum. Common issues: people pasting CSS into the HTML file, or putting everything in one file. Make sure they understand: HTML goes in index.html, CSS goes in style.css, JS goes in script.js. If someone's confused, just help them match the blocks.
 -->
 
 ---

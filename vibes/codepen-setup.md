@@ -13,11 +13,10 @@ This eliminates the biggest friction point: attendees don't need to know about C
 ### How to Set Up
 
 1. Go to **phcode.dev** and click **"Start Coding"** (no account needed)
-2. Create a new file called **index.html**
-3. Paste the starter HTML (see below) — it includes the p5.js CDN script tag
-4. Create a new file called **sketch.js**
-5. Paste the starter JS code (see below)
-6. Click the **Live Preview** button (lightning bolt icon) to see the canvas
+2. In the welcome dialog, click **GitHub Import** → paste: **curtrode/vibe-coding-starter**
+3. Your starter files are ready — click the **Live Preview** button (lightning bolt icon) to see the canvas
+
+**Alternative:** If GitHub Import doesn't work, download the ZIP from github.com/curtrode/vibe-coding-starter, unzip it, and use **Open Folder** in Phoenix Code (Chrome/Edge/Opera only).
 
 ### Starter HTML (index.html)
 
@@ -66,7 +65,7 @@ function draw() {
 
 ### What to Tell Attendees
 
-> "Go to phcode.dev and click Start Coding — no account needed. Create two files: index.html and sketch.js. Paste the starter code I'll share into each file. Click the lightning bolt icon for Live Preview. You'll paste AI-generated code into **sketch.js** — the preview updates automatically."
+> "Go to phcode.dev and click Start Coding — no account needed. Click GitHub Import and paste: curtrode/vibe-coding-starter. Your starter files are already set up. Click the lightning bolt icon for Live Preview. You'll paste AI-generated code into **sketch.js** — the preview updates automatically."
 
 ### index.html
 
@@ -149,4 +148,4 @@ Use the pinned version for the workshop.
 4. Files are organized naturally (index.html, sketch.js) — mirrors real web development
 5. Free and open source
 
-**Action item:** Test the setup flow on phcode.dev before the workshop. Create index.html and sketch.js with the starter code above, verify Live Preview works, and prepare to walk attendees through the same steps.
+**Action item:** Test the setup flow on phcode.dev before the workshop. Use GitHub Import with `curtrode/vibe-coding-starter`, verify Live Preview works, and prepare to walk attendees through the same steps. Also test the ZIP download fallback from github.com/curtrode/vibe-coding-starter.
