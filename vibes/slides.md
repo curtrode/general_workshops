@@ -10,18 +10,62 @@ mdc: true
 ---
 
 <script setup>
-import { onMounted } from 'vue'
+import { onBeforeUnmount, onMounted } from 'vue'
+
+const flashCopied = (el) => {
+  const orig = el.style.outline
+  el.style.outline = '2px solid #22c55e'
+  setTimeout(() => { el.style.outline = orig }, 600)
+}
+
+const copyText = async (text) => {
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text)
+      return true
+    }
+  } catch {
+    // Fall through to legacy fallback.
+  }
+
+  const ta = document.createElement('textarea')
+  ta.value = text
+  ta.setAttribute('readonly', '')
+  ta.style.position = 'fixed'
+  ta.style.opacity = '0'
+  ta.style.pointerEvents = 'none'
+  document.body.appendChild(ta)
+  ta.select()
+
+  let copied = false
+  try {
+    copied = document.execCommand('copy')
+  } catch {
+    copied = false
+  }
+  document.body.removeChild(ta)
+  return copied
+}
+
+const handleSelectAllClick = async (e) => {
+  const target = e.target
+  if (!(target instanceof Element)) return
+
+  const el = target.closest('.select-all')
+  if (!(el instanceof HTMLElement)) return
+
+  const text = el.innerText.replace(/^Prompt:\s*/i, '').trim()
+  if (!text) return
+
+  if (await copyText(text)) flashCopied(el)
+}
+
 onMounted(() => {
-  document.addEventListener('click', (e) => {
-    const el = e.target.closest('.select-all')
-    if (!el) return
-    const text = el.innerText.replace(/^Prompt:\s*/i, '').trim()
-    navigator.clipboard.writeText(text).then(() => {
-      const orig = el.style.outline
-      el.style.outline = '2px solid #22c55e'
-      setTimeout(() => { el.style.outline = orig }, 600)
-    })
-  })
+  document.addEventListener('click', handleSelectAllClick)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleSelectAllClick)
 })
 </script>
 
@@ -50,8 +94,8 @@ layout: center
 | 5 min | Good prompts vs. bad prompts |
 | 5 min | Write your personal AI guidelines |
 | 10 min | Set up Claude + CodePen · First prompt |
-| 20 min | Codealong: hero → sections → interactivity |
-| 25 min | Free experimentation — make it yours |
+| 25 min | Codealong: hero → sections → interactivity |
+| 20 min | Free experimentation — make it yours |
 | 10 min | Wrap-up and discussion |
 
 <!--
@@ -62,19 +106,15 @@ Quick overview so everyone knows the arc. First third is concepts, middle third 
 
 # What Is Vibe Coding?
 
-<img src="/karpathy_headshot.jpg" class="absolute top-8 right-12 w-36 rounded-full shadow-lg opacity-90" />
-
 <v-clicks>
 
-The term comes from **Andrej Karpathy** (OpenAI co-founder):
+Vibe coding is a (poorly named) way to get AI to write code for you — to develop websites, data analysis, apps, automations — by describing what you want in plain language. No programming knowledge required.
 
-> "You just see stuff, say stuff, run stuff, and copy-paste stuff, and it mostly works."
+You make requests; AI writes the code. **Your job is to guide the results.**
 
-**Translation:** You describe what you want in plain language. AI writes the code. You guide the process.
+Today we'll focus on **web development**, but the pattern works everywhere.
 
-This is **not** about becoming a programmer.
-
-It's about using AI as a **creative tool** — like picking up a paintbrush without going to art school.
+This is **not** about becoming a programmer — it's about having a seat at the table where digital things get made. Going from someone who uses the web to someone who can **shape it**, with AI as your collaborator.
 
 </v-clicks>
 
@@ -342,14 +382,14 @@ This maps to the CLAUDE.md concept from professional AI-assisted development. De
 Open **claude.ai** in your browser
 
 ### Step 2 — Create a free account
-Click **"Sign up"** — you can use Google, email, or Apple
+Click **"Sign up"** — email/Google are common options; phone verification may be required in supported regions
 
 ### Step 3 — Start a conversation
 You should see a chat interface. Type anything to test it.
 
 <div class="mt-4 text-sm opacity-70">
 
-Claude will **generate the code** for your website. You can also use ChatGPT or Gemini — the prompts work the same way.
+Claude will **generate the code** for your website. You can also use ChatGPT or Gemini — the prompt pattern is similar, but outputs and limits vary by model.
 
 </div>
 
@@ -486,7 +526,7 @@ class: text-center
 <div class="text-sm opacity-60 mt-4">Open Claude and CodePen side by side — now let's build it the right way</div>
 
 <!--
-Transition to the hands-on portion. I'll drive Claude on screen and paste into CodePen. Everyone follows along.
+Transition to the hands-on portion. I'll drive Claude on screen and paste into CodePen. Everyone follows along. If Claude is slow or rate-limited, have them switch to free ChatGPT — the prompts work the same way. If someone falls behind, remind them to scroll up in their chat and grab the last working code.
 -->
 
 ---
@@ -557,36 +597,24 @@ class: text-center
 
 Send these **one at a time** to Claude. Paste each updated set of blocks into CodePen.
 
-<div class="space-y-2 mt-2 text-sm">
+<div class="space-y-4 mt-4">
 
-<div class="bg-green-50 dark:bg-green-900 p-2 rounded select-all cursor-pointer">
+<div class="bg-green-50 dark:bg-green-900 p-4 rounded select-all cursor-pointer">
 
-**Prompt 1:** *"Add an About Me section below the hero with a placeholder photo on the left and a short bio paragraph on the right. Give me the updated HTML, CSS, and JS as three separate code blocks."*
-
-</div>
-
-<div class="bg-green-50 dark:bg-green-900 p-2 rounded select-all cursor-pointer">
-
-**Prompt 2:** *"Add a Skills section that displays 6 skills as cards in a grid. Use simple icons or emoji for each skill. Pick skills that a college student might have."*
+**Prompt 1:** *"Add an About Me section below the hero with a placeholder photo on the left and a short bio paragraph on the right. Below that, add a Skills section that displays 6 skills as cards in a grid — use simple icons or emoji for each skill. Pick skills that a college student might have. Give me the updated HTML, CSS, and JS as three separate code blocks."*
 
 </div>
 
-<div class="bg-green-50 dark:bg-green-900 p-2 rounded select-all cursor-pointer">
+<div class="bg-green-50 dark:bg-green-900 p-4 rounded select-all cursor-pointer">
 
-**Prompt 3:** *"Add a Contact section at the bottom with a simple form — name, email, and message fields with a Send button."*
-
-</div>
-
-<div class="bg-green-50 dark:bg-green-900 p-2 rounded select-all cursor-pointer">
-
-**Prompt 4:** *"Add a footer with links to GitHub, LinkedIn, and Twitter using icons. Include a copyright line."*
+**Prompt 2:** *"Add a Contact section at the bottom with a simple form — name, email, and message fields with a Send button. Below that, add a footer with links to GitHub, LinkedIn, and X (Twitter) using icons and a copyright line."*
 
 </div>
 
 </div>
 
 <!--
-Each prompt is one section. This is key — if you ask for five things at once and something breaks, you don't know which change caused it. One at a time. After each response, replace the contents of all three CodePen panels with the updated code. If something breaks, tell Claude what went wrong: "The about section is overlapping the hero" or "the skills cards aren't aligned." The first prompt asks for three separate code blocks — after that, Claude will keep giving separated blocks in the same conversation. Give them time here. Walk the room. Some people will be ahead, some behind. That's fine.
+Two prompts instead of four — each one adds two related sections. After each response, replace the contents of all three CodePen panels with the updated code. If something breaks, tell Claude what went wrong: "The about section is overlapping the hero" or "the skills cards aren't aligned." The first prompt asks for three separate code blocks — after that, Claude will keep giving separated blocks in the same conversation. Give them time here. Walk the room. Some people will be ahead, some behind. That's fine.
 -->
 
 ---
@@ -652,31 +680,25 @@ class: text-center
 
 These prompts add the polish that makes a site feel professional.
 
-<div class="space-y-4 mt-4">
+<div class="space-y-2 mt-2">
 
-<div class="bg-purple-50 dark:bg-purple-900 p-4 rounded select-all cursor-pointer">
+<div class="bg-purple-50 dark:bg-purple-900 p-3 rounded text-sm select-all cursor-pointer">
 
 **Prompt 1:** *"Add a navigation bar at the top that links to each section. When I click a link, it should smooth-scroll to that section."*
 
 </div>
 
-<div class="bg-purple-50 dark:bg-purple-900 p-4 rounded select-all cursor-pointer">
+<div class="bg-purple-50 dark:bg-purple-900 p-3 rounded text-sm select-all cursor-pointer">
 
 **Prompt 2:** *"Add a dark mode toggle button in the top-right corner of the nav bar. It should switch all colors to a dark theme and back."*
 
 </div>
 
-<div class="bg-purple-50 dark:bg-purple-900 p-4 rounded select-all cursor-pointer">
+<div class="bg-purple-50 dark:bg-purple-900 p-3 rounded text-sm select-all cursor-pointer">
 
 **Prompt 3:** *"Add subtle hover animations — skill cards should lift up slightly when hovered, and the CTA button should glow."*
 
 </div>
-
-</div>
-
-<div class="mt-6 text-sm opacity-70">
-
-These are all **JavaScript behaviors** — interactivity you described in English, and Claude implemented for you.
 
 </div>
 
@@ -706,7 +728,7 @@ This is the "wow" moment. One prompt gives us smooth scrolling. Another gives us
 
 <div class="grid grid-cols-2 gap-8 mt-10">
 <div class="text-center">
-  <div class="text-5xl font-bold text-gray-400">0</div>
+  <div class="text-5xl font-bold text-gray-400">~0</div>
   <div class="text-sm opacity-70 mt-1">lines written by hand</div>
 </div>
 <div class="text-center">
@@ -732,7 +754,7 @@ layout: center
 ---
 
 # Free Experimentation
-## 25 Minutes — Make It Yours
+## 20 Minutes — Make It Yours
 
 <div class="text-sm opacity-60">Keep prompting Claude — paste into CodePen to see your results. Ask me if you get stuck.</div>
 
@@ -740,50 +762,50 @@ layout: center
 
 # Challenge Ideas
 
-Pick one, combine a few, or invent your own:
+You don't have to keep building a portfolio — try something you'd actually use:
 
 <div class="grid grid-cols-4 gap-4 mt-6">
 
 <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-users-three class="text-3xl mb-2 mx-auto text-blue-600" />
+  <div class="text-sm font-bold">Club or Org</div>
+  <div class="text-xs opacity-60 mt-1">Page for your student group</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-camera class="text-3xl mb-2 mx-auto text-pink-500" />
+  <div class="text-sm font-bold">Photo Gallery</div>
+  <div class="text-xs opacity-60 mt-1">Showcase your photography or art</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-storefront class="text-3xl mb-2 mx-auto text-green-600" />
+  <div class="text-sm font-bold">Side Hustle</div>
+  <div class="text-xs opacity-60 mt-1">Landing page for a business</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
+  <ph-calendar-blank class="text-3xl mb-2 mx-auto text-amber-500" />
+  <div class="text-sm font-bold">Event Page</div>
+  <div class="text-xs opacity-60 mt-1">Promote an upcoming event</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
   <ph-palette class="text-3xl mb-2 mx-auto text-violet-500" />
   <div class="text-sm font-bold">Custom Theme</div>
-  <div class="text-xs opacity-60 mt-1">New colors & fonts</div>
+  <div class="text-xs opacity-60 mt-1">Restyle your portfolio</div>
 </div>
 
 <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-  <ph-briefcase class="text-3xl mb-2 mx-auto text-blue-600" />
-  <div class="text-sm font-bold">Projects</div>
-  <div class="text-xs opacity-60 mt-1">Add a portfolio gallery</div>
-</div>
-
-<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-  <ph-device-mobile class="text-3xl mb-2 mx-auto text-green-600" />
-  <div class="text-sm font-bold">Mobile-First</div>
-  <div class="text-xs opacity-60 mt-1">Optimize for phones</div>
-</div>
-
-<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-  <ph-sparkle class="text-3xl mb-2 mx-auto text-amber-500" />
+  <ph-sparkle class="text-3xl mb-2 mx-auto text-cyan-500" />
   <div class="text-sm font-bold">Animations</div>
   <div class="text-xs opacity-60 mt-1">Scroll effects & transitions</div>
 </div>
 
 <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-  <ph-article class="text-3xl mb-2 mx-auto text-pink-500" />
-  <div class="text-sm font-bold">Blog Section</div>
-  <div class="text-xs opacity-60 mt-1">Posts or articles page</div>
-</div>
-
-<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-  <ph-quotes class="text-3xl mb-2 mx-auto text-cyan-500" />
-  <div class="text-sm font-bold">Testimonials</div>
-  <div class="text-xs opacity-60 mt-1">Quotes carousel</div>
-</div>
-
-<div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
-  <ph-file-text class="text-3xl mb-2 mx-auto text-red-500" />
-  <div class="text-sm font-bold">Resume Page</div>
-  <div class="text-xs opacity-60 mt-1">Separate CV / resume</div>
+  <ph-heart class="text-3xl mb-2 mx-auto text-red-500" />
+  <div class="text-sm font-bold">Fan Page</div>
+  <div class="text-xs opacity-60 mt-1">A site about something you love</div>
 </div>
 
 <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 text-center shadow-sm hover:shadow-md transition-shadow">
@@ -796,12 +818,12 @@ Pick one, combine a few, or invent your own:
 
 <div class="mt-4 text-sm opacity-70 text-center">
 
-**Stuck?** Try: *"I want my portfolio to have [describe what you see in your head]."*
+**Stuck?** Try: *"Build me a [type of site] with [describe what you see in your head]."*
 
 </div>
 
 <!--
-Let them go. Walk the room. Help people who are stuck by asking "what do you want your site to look like?" and helping them turn that into a prompt. Don't write prompts for them — coach them to describe what they see. Some people will go deep on their portfolio. Others will start a completely different site. Both are fine. Remind anyone who's stuck to include "Give me the updated HTML, CSS, and JS as three separate code blocks" in their prompt so Claude gives them properly separated code to paste.
+This is where the seat at the table becomes real — they're not building what you told them to build, they're building what they want to exist. Walk the room. Help people who are stuck by asking "what do you want your site to look like?" and helping them turn that into a prompt. Don't write prompts for them — coach them to describe what they see. Remind anyone who's stuck to include "Give me the updated HTML, CSS, and JS as three separate code blocks" in their prompt.
 -->
 
 ---
@@ -882,7 +904,8 @@ Brief but important. We're not going deep on security today, but this needs to b
 4. **Your guidelines** keep you in the driver's seat
 5. **Breaking things** is debugging, not failing
 6. The **design decisions** are still yours — AI is the tool, not the designer
-7. **Review before you publish** — AI gets you there fast, but the last mile is yours
+7. You now have **a seat at the table** — you can shape the web, not just use it
+8. **Review before you publish** — AI gets you there fast, but the last mile is yours
 
 </v-clicks>
 

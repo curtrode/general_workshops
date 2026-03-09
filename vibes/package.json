@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "slidev slides.md --open",
-    "build": "slidev build slides.md",
+    "build": "slidev build slides.md --base /general_workshops/vibes/",
     "export": "slidev export slides.md"
   },
   "keywords": [],
