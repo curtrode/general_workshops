@@ -6,3 +6,4 @@ venv/
 .DS_Store
 vibes/python/page_dump.html
 vibes/python/forecast.csv
+vibes/slides-png/
