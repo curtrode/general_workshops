@@ -91,7 +91,7 @@ Karpathy coined this in early 2025. It went viral because it captured something 
 
 <div class="bg-blue-50 dark:bg-blue-900 rounded-xl p-5 flex items-start gap-3 shadow-sm">
   <ph-prohibit class="text-2xl text-red-400 mt-1 flex-shrink-0" />
-  <div><span class="font-bold">No HTML, CSS, or JavaScript needed</span><br/><span class="text-sm opacity-70">Seriously — not a single line</span></div>
+  <div><span class="font-bold">No prior knowledge of HTML, CSS, or JavaScript needed</span><br/><span class="text-sm opacity-70">Seriously</span></div>
 </div>
 
 <div class="bg-green-50 dark:bg-green-900 rounded-xl p-5 flex items-start gap-3 shadow-sm">
