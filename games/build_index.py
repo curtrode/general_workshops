@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate a retro-styled index.html gallery page from all *-game.html files
+Generate a retro-styled arcade.html gallery page from all *-game.html files
 in this directory. Run manually or via GitHub Action.
 
 Usage:
@@ -162,9 +162,9 @@ def main():
         content = '    <div class="empty"><p>No games yet...</p><p>INSERT COIN TO CONTINUE</p></div>'
 
     html = TEMPLATE.format(content=content)
-    output = games_dir / "index.html"
+    output = games_dir / "arcade.html"
     output.write_text(html, encoding="utf-8")
-    print(f"Built index.html with {len(game_files)} game(s)")
+    print(f"Built arcade.html with {len(game_files)} game(s)")
     for f in game_files:
         print(f"  - {f}")
 

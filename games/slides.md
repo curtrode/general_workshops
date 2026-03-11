@@ -313,17 +313,13 @@ Give them a minute to decide. There's no wrong choice. All four produce great re
 
 # The Full Prompt
 
-<div class="bg-blue-50 dark:bg-blue-900 p-4 rounded-lg mt-2 text-xs leading-relaxed select-all cursor-pointer" title="Click to copy">
+Copy from **D2L:** TOC → March 11 → **"Copy and Paste When Prompted"**
 
-**Prompt:**
+<div class="bg-blue-50 dark:bg-blue-900 p-4 rounded-lg mt-2 text-sm leading-relaxed select-all cursor-pointer" title="Click to copy">
 
 I have no coding experience. I want you to build me a complete browser game in a single HTML file using the p5.js library (loaded from CDN). The game's theme is "A Human-Centered AI Future" — our hero is defending humanity against AI-era threats.
 
-I'd like to make a: [PICK ONE]
-1. Breakout/Arkanoid — I control a paddle at the bottom and bounce a ball to smash rows of threat-bricks
-2. Space Invaders — I'm a defender at the bottom shooting upward at rows of descending threats
-3. Frogger — I guide a human safely across lanes of scrolling AI threats to reach safety
-4. Flappy Bird — I tap to keep my hero aloft, flying through gaps between AI threat-walls
+I'd like to make a: **[PICK ONE]** 1. Breakout/Arkanoid 2. Space Invaders 3. Frogger 4. Flappy Bird
 
 The enemies/obstacles should be AI-era threats like: Rogue Code, Network Outages, Creative Outsourcing, Data Breaches, Bias Bugs, Deepfakes, Hallucinations, Surveillance, Misinformation, and Algorithmic Bias. Label them visibly so the player can read what they're smashing/dodging.
 
@@ -331,14 +327,14 @@ Include: A start screen with the title "A Human-Centered AI Future" and simple i
 
 </div>
 
-<div class="mt-3 text-sm">
+<div class="mt-3 text-sm opacity-70">
 
-**Before you paste:** delete the game options you *don't* want, or just add "I pick #2" at the end.
+**Before you paste:** delete the options you don't want, or just add "I pick #2" at the end.
 
 </div>
 
 <!--
-This is the moment. Have them copy the full prompt, make their game choice, and paste it into Claude. While Claude generates, remind them: this is one prompt. It's detailed because we designed it to be. Every piece we just walked through is in there. Give Claude a minute to generate — the response will be long. That's normal.
+D2L has the full prompt with the complete game descriptions for each option. This slide shows a condensed version so students can see the whole thing at a glance. Have them copy from D2L, make their game choice, and paste into Claude. While Claude generates, remind them: this is one prompt. It's detailed because we designed it to be. Every piece we just walked through is in there. Give Claude a minute to generate — the response will be long. That's normal.
 -->
 
 ---
@@ -489,7 +485,7 @@ Use **Ctrl+F** (or **Cmd+F** on Mac) to search in Phoenix Code.
 </div>
 
 <div class="bg-amber-50 dark:bg-amber-900 rounded-xl p-4 shadow-sm">
-  <div class="font-bold mb-2">Spicy</div>
+  <div class="font-bold mb-2">Hard</div>
   <div class="text-sm opacity-80">
     Find the lives count and change it to 99<br/>
     <span class="text-xs opacity-50">Search for "lives" near GAME SETTINGS</span>

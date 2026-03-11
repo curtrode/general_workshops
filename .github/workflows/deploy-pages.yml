@@ -30,7 +30,7 @@ jobs:
           mkdir -p _site/vibes _site/games _site/games/slides
           cp -r vibes/dist/* _site/vibes/
           cp vibes/dist/404.html _site/404.html
-          cp games/index.html _site/games/ 2>/dev/null || true
+          cp games/arcade.html _site/games/index.html 2>/dev/null || true
           cp games/*-game.html _site/games/ 2>/dev/null || true
           if [ -d games/dist ]; then cp -r games/dist/* _site/games/slides/; fi
       - uses: actions/configure-pages@v5
