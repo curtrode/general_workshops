@@ -92,14 +92,11 @@ layout: center
 | Time | Activity |
 |------|----------|
 | 10 min | Quick recap + what's different today |
-| 5 min | Anatomy of the game prompt |
-| 5 min | Pick your game + paste the prompt |
-| 5 min | Setup: Phoenix Code |
-| 10 min | Play it + review together |
-| 5 min | First iteration: add section comments |
-| 5 min | Manual edit challenge |
-| 25 min | Vibe it: personalize your game |
-| 10 min | Share + discussion |
+| 10 min | Anatomy of the prompt + pick your game |
+| 10 min | Setup Phoenix Code + paste and play |
+| 10 min | First iteration + manual edit challenge |
+| 25 min | Vibe it — personalize your game |
+| 15 min | Share + discussion |
 
 <!--
 The arc is similar to last time — concepts, then hands-on, then experimentation. But today we start with one big prompt instead of building up gradually. The iteration is where the real learning happens.
@@ -109,31 +106,31 @@ The arc is similar to last time — concepts, then hands-on, then experimentatio
 
 # Quick Recap: What We Learned
 
-<div class="grid grid-cols-2 gap-6 mt-4">
+<div class="grid grid-cols-2 gap-4 mt-3">
 <v-clicks>
 
-<div class="bg-blue-50 dark:bg-blue-900 rounded-xl p-5 shadow-sm">
-  <div class="font-bold mb-2">The AI Coding Spectrum</div>
+<div class="bg-blue-50 dark:bg-blue-900 rounded-xl p-3 shadow-sm">
+  <div class="font-bold mb-1">The AI Coding Spectrum</div>
   <div class="text-sm opacity-80">Level 1 (tutor) → Level 2 (collaborative) → <strong>Level 3 (vibe coding)</strong> → Level 4 (autopilot)</div>
-  <div class="text-sm mt-2 opacity-60">The right level depends on the task</div>
+  <div class="text-xs mt-1 opacity-60">The right level depends on the task</div>
 </div>
 
-<div class="bg-green-50 dark:bg-green-900 rounded-xl p-5 shadow-sm">
-  <div class="font-bold mb-2">The Core Cycle</div>
+<div class="bg-green-50 dark:bg-green-900 rounded-xl p-3 shadow-sm">
+  <div class="font-bold mb-1">The Core Cycle</div>
   <div class="text-sm opacity-80"><strong>Describe</strong> → Generate → <strong>Review</strong> → Refine → Repeat</div>
-  <div class="text-sm mt-2 opacity-60">Your prompts are the creative work</div>
+  <div class="text-xs mt-1 opacity-60">Your prompts are the creative work</div>
 </div>
 
-<div class="bg-amber-50 dark:bg-amber-900 rounded-xl p-5 shadow-sm">
-  <div class="font-bold mb-2">Good Prompts</div>
+<div class="bg-amber-50 dark:bg-amber-900 rounded-xl p-3 shadow-sm">
+  <div class="font-bold mb-1">Good Prompts</div>
   <div class="text-sm opacity-80">Specific outcomes, clear constraints, iterate in small steps</div>
-  <div class="text-sm mt-2 opacity-60">Not "make me a website" — describe what you see</div>
+  <div class="text-xs mt-1 opacity-60">Not "make me a website" — describe what you see</div>
 </div>
 
-<div class="bg-violet-50 dark:bg-violet-900 rounded-xl p-5 shadow-sm">
-  <div class="font-bold mb-2">Your Guidelines</div>
+<div class="bg-violet-50 dark:bg-violet-900 rounded-xl p-3 shadow-sm">
+  <div class="font-bold mb-1">Your Guidelines</div>
   <div class="text-sm opacity-80">Review before moving on. Understand before publishing.</div>
-  <div class="text-sm mt-2 opacity-60">Still applies — maybe even more so with games</div>
+  <div class="text-xs mt-1 opacity-60">Still applies — maybe even more so with games</div>
 </div>
 
 </v-clicks>
@@ -206,44 +203,68 @@ We're going to look at the prompt piece by piece before anyone pastes it. This i
 
 ---
 
-# The Prompt: Section by Section
+# The Prompt: Setup & Direction
 
-<div class="space-y-3 mt-2 text-sm">
+<div class="space-y-4 mt-4 text-sm">
 
-<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
+<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
   <div class="font-bold text-blue-600 dark:text-blue-400 mb-1">Context & Constraints</div>
   <div class="opacity-80">"I have no coding experience. I want you to build me a complete browser game in a single HTML file using the p5.js library (loaded from CDN)."</div>
-  <div class="text-xs opacity-50 mt-1">Tells the AI: keep it simple, self-contained, use this specific tool.</div>
+  <div class="text-xs opacity-50 mt-2">Tells the AI: keep it simple, self-contained, use this specific tool.</div>
 </div>
 
-<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
+<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
   <div class="font-bold text-violet-600 dark:text-violet-400 mb-1">Theme & Narrative</div>
   <div class="opacity-80">"The game's theme is 'A Human-Centered AI Future' — our hero is defending humanity against AI-era threats."</div>
-  <div class="text-xs opacity-50 mt-1">Gives the AI a story to build around — not just mechanics, but meaning.</div>
+  <div class="text-xs opacity-50 mt-2">Gives the AI a story to build around — not just mechanics, but meaning.</div>
 </div>
 
-<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
+<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
   <div class="font-bold text-green-600 dark:text-green-400 mb-1">Game Style (Pick One)</div>
   <div class="opacity-80">Four options: Breakout, Space Invaders, Frogger, Flappy Bird — each described in one sentence.</div>
-  <div class="text-xs opacity-50 mt-1">Constrains the genre so the AI has a clear mechanical blueprint.</div>
-</div>
-
-<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
-  <div class="font-bold text-amber-600 dark:text-amber-400 mb-1">Specific Content</div>
-  <div class="opacity-80">Named enemies: Rogue Code, Deepfakes, Bias Bugs, Hallucinations... "Label them visibly."</div>
-  <div class="text-xs opacity-50 mt-1">The AI won't guess what "AI threats" means — naming them gets specific, readable results.</div>
-</div>
-
-<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-3">
-  <div class="font-bold text-red-600 dark:text-red-400 mb-1">Feature List</div>
-  <div class="opacity-80">Start screen, game over, score, lives, particles, retro aesthetic.</div>
-  <div class="text-xs opacity-50 mt-1">A checklist the AI will try to hit — keeps the output complete and polished.</div>
+  <div class="text-xs opacity-50 mt-2">Constrains the genre so the AI has a clear mechanical blueprint.</div>
 </div>
 
 </div>
 
 <!--
-Walk through each section. The prompt isn't random — it's structured. Context sets the technical constraints. Theme gives the AI narrative direction. The game style pick is the single most important creative decision they'll make. Named enemies prevent vague, generic output. The feature list is a quality checklist. Every line has a job. This is what makes a prompt "good" — not length, but intentionality.
+Walk through the first three sections. Context sets the technical constraints — single file, specific library, beginner-level. Theme gives the AI narrative direction — not just "make a game" but a game with meaning. The game style pick is the single most important creative decision they'll make — it determines the entire mechanical structure.
+-->
+
+---
+
+# The Prompt: Content & Quality
+
+<div class="space-y-4 mt-4 text-sm">
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+  <div class="font-bold text-amber-600 dark:text-amber-400 mb-1">Specific Content</div>
+  <div class="opacity-80">Named enemies: Rogue Code, Deepfakes, Bias Bugs, Hallucinations... "Label them visibly."</div>
+  <div class="text-xs opacity-50 mt-2">The AI won't guess what "AI threats" means — naming them gets specific, readable results.</div>
+</div>
+
+<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+  <div class="font-bold text-red-600 dark:text-red-400 mb-1">Feature List</div>
+  <div class="opacity-80">Start screen, game over, score, lives, particles, retro aesthetic.</div>
+  <div class="text-xs opacity-50 mt-2">A checklist the AI will try to hit — keeps the output complete and polished.</div>
+</div>
+
+</div>
+
+<v-click>
+
+<div class="mt-6 bg-blue-50 dark:bg-blue-900 rounded-lg p-4">
+
+**The pattern:** Every section of the prompt has a job. Context constrains. Theme directs. Style defines mechanics. Content specifies. Features set the quality bar.
+
+This is what makes a prompt "good" — not length, but **intentionality**.
+
+</div>
+
+</v-click>
+
+<!--
+The last two sections. Named enemies prevent vague, generic output — the AI needs concrete strings to render. The feature list is a quality checklist: without it, you might get a game that works but has no start screen or score display. Then the takeaway: every line in the prompt has a purpose. That's the difference between a wall of text and a blueprint.
 -->
 
 ---
