@@ -1,0 +1,18 @@
+{
+  "name": "games-workshop",
+  "version": "1.0.0",
+  "description": "Day 2: Conversation Coding — Build a Game with AI",
+  "scripts": {
+    "dev": "slidev slides.md --open",
+    "build": "slidev build slides.md --base /general_workshops/games/slides/",
+    "export": "slidev export slides.md"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.13.0",
+    "@slidev/theme-apple-basic": "^0.25.1",
+    "@slidev/theme-default": "^0.25.0"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.58.2"
+  }
+}
